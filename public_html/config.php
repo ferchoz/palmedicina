@@ -4,7 +4,6 @@ if (!isset($_SERVER['HTTP_HOST'])) {
     exit('This script cannot be run from the CLI. Run it from a browser.');
 }
 
-
 require_once dirname(__FILE__).'/../app/SymfonyRequirements.php';
 
 $symfonyRequirements = new SymfonyRequirements();
