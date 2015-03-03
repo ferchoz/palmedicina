@@ -3,15 +3,28 @@
 namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
 {
     /**
-     * @Route("/app/example", name="homepage")
+     * @Route("/client")
      */
-    public function indexAction()
+    public function clientAction()
     {
+        return $this->render('default/index.html.twig');
+    }
+
+    /**
+     * @Route("/test")
+     */
+    public function testAction()
+    {
+        $product = $this->getDoctrine()
+            ->getRepository('AppBundle:Usuarios')
+            ->find(2);
+
+        var_dump($product->getUsername(),$product->getPassword());die;
         return $this->render('default/index.html.twig');
     }
 }
