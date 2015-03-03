@@ -8,23 +8,26 @@ use Symfony\Component\HttpFoundation\Response;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/client")
+     * @Route("/client/empresa", name="index")
      */
-    public function clientAction()
+    public function empresaAction()
     {
         return $this->render('default/index.html.twig');
     }
 
     /**
-     * @Route("/test")
+     * @Route("/client/faq", name="faq")
      */
-    public function testAction()
+    public function faqAction()
     {
-        $product = $this->getDoctrine()
-            ->getRepository('AppBundle:Usuarios')
-            ->find(2);
+        return $this->render('default/faq.html.twig');
+    }
 
-        var_dump($product->getUsername(),$product->getPassword());die;
-        return $this->render('default/index.html.twig');
+    /**
+     * @Route("/client/services", name="services")
+     */
+    public function servicesAction()
+    {
+        return $this->render('default/services.html.twig');
     }
 }
