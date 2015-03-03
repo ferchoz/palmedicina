@@ -1,0 +1,92 @@
+/*Estilos para intranet de PAL Medicina Laboral - By Romi´ss*/
+
+.navbar {
+	min-height: 80px;
+
+}
+
+.navbar-inverse{
+	background-image: url(../img/fondo.png);
+    background-attachment: fixed;
+    background-position: center; 
+    background-color: white;
+    background-repeat:no-repeat;
+    background-position:center top;
+    border-color: darkblue;
+}
+
+.navbar-inverse .navbar-nav>li>a{
+	color: black;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover{
+	color: darkblue ;
+}
+
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover{
+	background-color: transparent;
+}
+
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover{
+	color:black;
+}
+
+.container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header{
+	min-height: 80px;
+}
+
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover{
+	color: darkblue ;
+}
+.navbar-inverse .navbar-toggle{
+	border-color: darkblue;
+}
+.navbar-inverse .navbar-toggle .icon-bar{
+	background-color: darkblue;
+}
+
+a:visited{color:black !important;}
+
+h3{
+	color:darkblue;
+}
+
+.firma{
+	font-style: oblique;
+	text-align: right;
+
+}
+
+footer{
+	text-align: center;
+	color: darkblue;
+}
+
+.panel-default>.panel-heading{
+	background-color: aliceblue;
+}
+
+.well{
+	background-color: aliceblue;
+}
+
+.navbar-brand{
+	float:none;
+}
+
+.navbar-nav>li>a{
+	padding-top: 37px;
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+color: black;
+ background-color: transparent;
+}
+
+.page-header {
+padding-top: 20px;
+}
+
+.navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover{
+	color:	darkblue;
+}
