@@ -1,0 +1,11 @@
+services:
+    sonata.admin.post:
+        class: AppBundle\Admin\SlideCompanyAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Slide Company" }
+        arguments:
+            - ~
+            - AppBundle\Entity\SlideCompany
+            - ~
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
