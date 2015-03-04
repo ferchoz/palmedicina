@@ -21,14 +21,14 @@ class AppKernel extends Kernel
             new Sonata\CoreBundle\SonataCoreBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
-
-            // If you haven't already, add the storage bundle
-            // This example uses SonataDoctrineORMAdmin but
-            // it works the same with the alternatives
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
-
             // Then add SonataAdminBundle
             new Sonata\AdminBundle\SonataAdminBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle(),
+            new Sonata\MediaBundle\SonataMediaBundle(),
+            new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
+            new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
+            new Sonata\IntlBundle\SonataIntlBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
