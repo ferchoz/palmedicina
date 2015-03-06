@@ -6,13 +6,14 @@
 }
 
 .navbar-inverse{
-	background-image: url(../img/fondo.png);
-    background-attachment: fixed;
+	
+    
     background-position: center; 
     background-color: white;
-    background-repeat:no-repeat;
-    background-position:center top;
     border-color: darkblue;
+	background-image:url('../img/nav-fondo-01.jpg');
+	background-repeat: no-repeat;
+	
 }
 
 .navbar-inverse .navbar-nav>li>a{
@@ -60,6 +61,20 @@ h3{
 footer{
 	text-align: center;
 	color: darkblue;
+	background-color: gray;
+	margin:0;
+	padding-top: 30px;
+	padding-bottom: 10px;
+background: rgb(173,217,228); /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2FkZDllNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwJSIgc3RvcC1jb2xvcj0iI2Q5ZWRmMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwJSIgc3RvcC1jb2xvcj0iI2Q5ZWRmMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjMzJSIgc3RvcC1jb2xvcj0iI2Y3ZmJmYyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQ2JSIgc3RvcC1jb2xvcj0iI2Q5ZWRmMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijg2JSIgc3RvcC1jb2xvcj0iI2FkZDllNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+background: -moz-linear-gradient(top,  rgb(173,217,228) 0%, rgb(217,237,242) 10%, rgb(217,237,242) 10%, rgb(247,251,252) 33%, rgb(217,237,242) 46%, rgb(173,217,228) 86%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(173,217,228)), color-stop(10%,rgb(217,237,242)), color-stop(10%,rgb(217,237,242)), color-stop(33%,rgb(247,251,252)), color-stop(46%,rgb(217,237,242)), color-stop(86%,rgb(173,217,228))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgb(173,217,228) 0%,rgb(217,237,242) 10%,rgb(217,237,242) 10%,rgb(247,251,252) 33%,rgb(217,237,242) 46%,rgb(173,217,228) 86%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgb(173,217,228) 0%,rgb(217,237,242) 10%,rgb(217,237,242) 10%,rgb(247,251,252) 33%,rgb(217,237,242) 46%,rgb(173,217,228) 86%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgb(173,217,228) 0%,rgb(217,237,242) 10%,rgb(217,237,242) 10%,rgb(247,251,252) 33%,rgb(217,237,242) 46%,rgb(173,217,228) 86%); /* IE10+ */
+background: linear-gradient(to bottom,  rgb(173,217,228) 0%,rgb(217,237,242) 10%,rgb(217,237,242) 10%,rgb(247,251,252) 33%,rgb(217,237,242) 46%,rgb(173,217,228) 86%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#add9e4', endColorstr='#add9e4',GradientType=0 ); /* IE6-8 */
 }
 
 .panel-default>.panel-heading{
@@ -80,7 +95,7 @@ footer{
 
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
 color: black;
- background-color: transparent;
+background-color: transparent;
 }
 
 .page-header {
@@ -90,3 +105,79 @@ padding-top: 20px;
 .navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover{
 	color:	darkblue;
 }
+
+#cierrosesion{
+	float: right;
+	margin-top: 10px;
+}
+
+#cierrosesion:hover{
+	background-color: gray;
+	color: white;
+}
+
+#infosesion p{
+	float: right;
+	margin-top: 20px;
+	margin-right: 15px;
+}
+
+#infosesion span{
+	color:darkblue;
+
+}
+
+#infosesion {
+float: center;
+padding-top: 44px;
+height: auto;
+}
+
+.carousel-inner{
+	max-height: 450px;
+	margin-top: 10px;
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	.collapse{
+		background-color: white;
+}
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+	.collapse{
+		background-color: white;
+}
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
+	.collapse{
+		background-color: white;
+}
+}
+
+@media (min-width: 768px) and (max-width: 993px) { 
+    
+     .nav>li>a{
+     	padding: 10px 8px;
+     }
+}
+
+@media (min-width: 768px) and (max-width: 993px) { 
+    
+        .navbar-right{
+    	margin-top: 30px;
+        }
+
+ }
+
+ @media (min-width: 768px) and (max-width: 993px) { 
+    
+        .navbar-brand>img{
+    	height: 45px;
+        }
+
+ }
