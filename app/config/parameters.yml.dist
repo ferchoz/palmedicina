@@ -6,6 +6,12 @@ parameters:
     database_name: pal
     database_user: root
     database_password: '989487'
+    old_database_driver: pdo_mysql
+    old_database_host: 127.0.0.1
+    old_database_port: null
+    old_database_name: old_palmedicina
+    old_database_user: root
+    old_database_password: '989487'
     mailer_transport: smtp
     mailer_host: 127.0.0.1
     mailer_user: null
