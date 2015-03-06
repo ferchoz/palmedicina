@@ -1,3 +1,8 @@
+old:
+    resource: "@OldBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 app:
     resource: @AppBundle/Controller/
     type:     annotation
@@ -18,3 +23,6 @@ gallery:
 media:
     resource: '@SonataMediaBundle/Resources/config/routing/media.xml'
     prefix: /media
+
+logout:
+    path:   /logout

@@ -8,7 +8,7 @@ use Symfony\Component\Security\Core\SecurityContextInterface;
 class SecurityController extends Controller
 {
     /**
-     * @Route("/login", name="login_route")
+     * @Route("/login", name="login_consultas")
      */
     public function loginAction(Request $request)
     {
