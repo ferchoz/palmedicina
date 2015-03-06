@@ -13,15 +13,6 @@ use Doctrine\ORM\Mapping as ORM;
 class iNOVEDADES
 {
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
-
-    /**
      * @var \DateTime
      *
      * @ORM\Column(name="Fecha", type="date")
@@ -161,16 +152,6 @@ class iNOVEDADES
      */
     private $operador;
 
-
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * Set fecha
