@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/client/empresa", name="index")
+     * @Route("/consultas/empresa", name="company")
      */
     public function empresaAction()
     {
@@ -16,7 +16,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/client/faq", name="faq")
+     * @Route("/consultas/preguntas-frecuentes", name="faq")
      */
     public function faqAction()
     {
@@ -24,7 +24,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/client/services", name="services")
+     * @Route("/consultas/servicios", name="services")
      */
     public function servicesAction()
     {

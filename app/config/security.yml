@@ -16,7 +16,7 @@ security:
                 check_path: /login_check
 
     access_control:
-        - { path: ^/client, roles: ROLE_USER }
+        - { path: ^/consultas, roles: ROLE_USER }
 
     encoders:
         AppBundle\Entity\Usuarios: plaintext
