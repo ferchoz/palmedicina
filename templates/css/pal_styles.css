@@ -6,14 +6,11 @@
 }
 
 .navbar-inverse{
-	
-    
-    background-position: center; 
+    background-position: center;
     background-color: white;
     border-color: darkblue;
 	background-image:url('../img/nav-fondo-01.jpg');
 	background-repeat: no-repeat;
-	
 }
 
 .navbar-inverse .navbar-nav>li>a{
@@ -21,7 +18,7 @@
 }
 
 .navbar-inverse .navbar-nav>li>a:hover{
-	color: darkblue ;
+	color: darkblue;
 }
 
 .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover{
@@ -61,11 +58,10 @@ h3{
 footer{
 	text-align: center;
 	color: darkblue;
-	background-color: gray;
 	margin:0;
 	padding-top: 30px;
 	padding-bottom: 10px;
-background: rgb(173,217,228); /* Old browsers */
+    background: rgb(173,217,228); /* Old browsers */
 /* IE9 SVG, needs conditional override of 'filter' to 'none' */
 background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2FkZDllNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwJSIgc3RvcC1jb2xvcj0iI2Q5ZWRmMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwJSIgc3RvcC1jb2xvcj0iI2Q5ZWRmMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjMzJSIgc3RvcC1jb2xvcj0iI2Y3ZmJmYyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQ2JSIgc3RvcC1jb2xvcj0iI2Q5ZWRmMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijg2JSIgc3RvcC1jb2xvcj0iI2FkZDllNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
 background: -moz-linear-gradient(top,  rgb(173,217,228) 0%, rgb(217,237,242) 10%, rgb(217,237,242) 10%, rgb(247,251,252) 33%, rgb(217,237,242) 46%, rgb(173,217,228) 86%); /* FF3.6+ */
@@ -128,13 +124,13 @@ padding-top: 20px;
 }
 
 #infosesion {
-float: center;
+float: right;
 padding-top: 44px;
 height: auto;
 }
 
 .carousel-inner{
-	max-height:  :450px;	
+	max-height: 450px;
 	margin-top: 10px;
 }
 
@@ -160,24 +156,19 @@ height: auto;
 }
 
 @media (min-width: 768px) and (max-width: 993px) { 
-    
      .nav>li>a{
      	padding: 10px 8px;
      }
 }
 
 @media (min-width: 768px) and (max-width: 993px) { 
-    
         .navbar-right{
     	margin-top: 30px;
         }
+}
 
- }
-
- @media (min-width: 768px) and (max-width: 993px) { 
-    
-        .navbar-brand>img{
-    	height: 45px;
-        }
-
- }
+@media (min-width: 768px) and (max-width: 993px) {
+    .navbar-brand>img{
+    height: 45px;
+    }
+}
