@@ -48,7 +48,7 @@ class DefaultController extends Controller
         $news = $this->get('doctrine')
             ->getRepository('OldBundle:iNOVEDADES', 'old')
             ->findBy(
-                array('codigoe' => $user->getCodigopal(), 'fecha' => new \DateTime('2015-03-02')),
+                array('codigoe' => $user->getCodigopal(), 'fecha' => new \DateTime('now')),
                 array('fecha' => 'DESC')
             );
         ;
