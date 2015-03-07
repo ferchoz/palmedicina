@@ -107,11 +107,6 @@ padding-top: 20px;
 	margin-top: 10px;
 }
 
-#cierrosesion:hover{
-	background-color: gray;
-	color: white;
-}
-
 #infosesion p{
 	float: right;
 	margin-top: 20px;
