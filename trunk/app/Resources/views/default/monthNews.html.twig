@@ -1,5 +1,7 @@
 {% extends 'layout.html.twig' %}
 
+{% block title %}{{ parent() }} - Novedades del mes{% endblock %}
+
 {% block container %}
     {% for new in news %}
         <ul>
