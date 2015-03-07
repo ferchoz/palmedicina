@@ -1,5 +1,7 @@
 {% extends 'layout.html.twig' %}
 
+{% block title %}{{ parent() }} - Empresa{% endblock %}
+
 {% block container %}
     <div class="row">
         <div class="col-lg-12">
@@ -42,16 +44,16 @@
         <div class="col-md-6">
             <h3>Datos de la empresa</h3>
             <ul>
-                <li>Empresa: LA CARDEUSE S.A.</li>
-                <li> Usuario: SERGIO</li>
-                <li> Domicilio: CARLOS PELLEGRINI 3422</li>
-                <li> Localidad: VALENTIN ALSINA</li>
-                <li> Telefono: 4209-8660/61</li>
-                <li> Contacto: DAVID. MARIA JOSE</li>
-                <li> Actividad: FCA. COLCHONES</li>
-                <li> Mail para envio de informes : evelina@lacardeuse.com.ar</li>
-                <li> Mail para reclamo de pagos: cintia@lacardeuse.com.ar</li>
-                <li> ART: ART LIDERAR SA</li>
+                <li>Empresa: {{ app.user.nombrepal }}</li>
+                <li> Usuario: {{ app.user.usuario }}</li>
+                <li> Domicilio: {{ app.user.domicilio }}</li>
+                <li> Localidad: {{ app.user.localidad }}</li>
+                <li> Telefono: {{ app.user.telefono }}</li>
+                <li> Contacto: {{ app.user.contacto }}</li>
+                <li> Actividad: {{ app.user.actividad }}</li>
+                <li> Mail para envio de informes : {{ app.user.correo }}</li>
+                <li> Mail para reclamo de pagos: {{ app.user.correop }}</li>
+                <li> ART: {{ app.user.nombreart }}</li>
             </ul>
             <p>Por favor chequear los datos de su empresa registrados en nuestra base de datos. Para solicitar una modificación enviar mail a Fernando a sistemas@palmedicinalaboral.com.ar</p>
         </div>

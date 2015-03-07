@@ -65,6 +65,55 @@ class Usuarios implements UserInterface, \Serializable
      */
     private $correo;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Domicilio", type="string", length=110)
+     */
+    private $domicilio;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Localidad", type="string", length=110)
+     */
+    private $localidad;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Telefono", type="string", length=110)
+     */
+    private $telefono;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Contacto", type="string", length=110)
+     */
+    private $contacto;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Actividad", type="string", length=110)
+     */
+    private $actividad;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Correop", type="string", length=110)
+     */
+    private $correop;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Nombart", type="string", length=110)
+     */
+    private $nombreart;
+
     private $isActive;
 
     public function __construct()
@@ -318,5 +367,166 @@ class Usuarios implements UserInterface, \Serializable
     public function eraseCredentials()
     {
         // TODO: Implement eraseCredentials() method.
+    }
+
+    /**
+     * Set domicilio
+     *
+     * @param string $domicilio
+     * @return Usuarios
+     */
+    public function setDomicilio($domicilio)
+    {
+        $this->domicilio = $domicilio;
+
+        return $this;
+    }
+
+    /**
+     * Get domicilio
+     *
+     * @return string 
+     */
+    public function getDomicilio()
+    {
+        return $this->domicilio;
+    }
+
+    /**
+     * Set localidad
+     *
+     * @param string $localidad
+     * @return Usuarios
+     */
+    public function setLocalidad($localidad)
+    {
+        $this->localidad = $localidad;
+
+        return $this;
+    }
+
+    /**
+     * Get localidad
+     *
+     * @return string 
+     */
+    public function getLocalidad()
+    {
+        return $this->localidad;
+    }
+
+    /**
+     * Set telefono
+     *
+     * @param string $telefono
+     * @return Usuarios
+     */
+    public function setTelefono($telefono)
+    {
+        $this->telefono = $telefono;
+
+        return $this;
+    }
+
+    /**
+     * Get telefono
+     *
+     * @return string 
+     */
+    public function getTelefono()
+    {
+        return $this->telefono;
+    }
+
+    /**
+     * Set contacto
+     *
+     * @param string $contacto
+     * @return Usuarios
+     */
+    public function setContacto($contacto)
+    {
+        $this->contacto = $contacto;
+
+        return $this;
+    }
+
+    /**
+     * Get contacto
+     *
+     * @return string 
+     */
+    public function getContacto()
+    {
+        return $this->contacto;
+    }
+
+    /**
+     * Set actividad
+     *
+     * @param string $actividad
+     * @return Usuarios
+     */
+    public function setActividad($actividad)
+    {
+        $this->actividad = $actividad;
+
+        return $this;
+    }
+
+    /**
+     * Get actividad
+     *
+     * @return string 
+     */
+    public function getActividad()
+    {
+        return $this->actividad;
+    }
+
+    /**
+     * Set correop
+     *
+     * @param string $correop
+     * @return Usuarios
+     */
+    public function setCorreop($correop)
+    {
+        $this->correop = $correop;
+
+        return $this;
+    }
+
+    /**
+     * Get correop
+     *
+     * @return string 
+     */
+    public function getCorreop()
+    {
+        return $this->correop;
+    }
+
+    /**
+     * Set nombreart
+     *
+     * @param string $nombreart
+     * @return Usuarios
+     */
+    public function setNombreart($nombreart)
+    {
+        $this->nombreart = $nombreart;
+
+        return $this;
+    }
+
+    /**
+     * Get nombreart
+     *
+     * @return string 
+     */
+    public function getNombreart()
+    {
+        return $this->nombreart;
     }
 }
