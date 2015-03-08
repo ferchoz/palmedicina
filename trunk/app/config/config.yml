@@ -135,3 +135,10 @@ sonata_media:
 sonata_admin:
     title:      Palmedicina Administrador
     title_logo: img/logo.png
+
+services:
+    app.twig_extension:
+        class: AppBundle\Twig\AppExtension
+        public: false
+        tags:
+            - { name: twig.extension }
