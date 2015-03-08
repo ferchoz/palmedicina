@@ -4,13 +4,34 @@
 
 {% block container %}
     {% for new in news %}
-        <ul>
-            <li>Fecha de atención: {{ new.fecha | date('d/m/Y') }}</li>
-            <li>Paciente: {{ new.nombre }}</li>
-            <li>Tipo de atención: {{ new.tiponov }}</li>
-            <li>Referencia: {{ new.enlace }}</li>
-        </ul>
-        <p>{{ new.ren1 }}</p>
+        <div class="row">
+            <div class="col-lg-6">
+                <ul>
+                    <li>Fecha de atención: {{ new.fecha | date('d/m/Y') }}</li>
+                    <li>Paciente: <strong>{{ new.nombre }}</strong></li>
+                    <li>Tipo de atención: {{ new.tiponov }}</li>
+                    <li>Referencia: {{ new.enlace }}</li>
+                </ul>
+                <p>
+                    {{ new.ren1 }}
+                    {% if new.ren2|trim != '' %}<br/>{{ new.ren2 }}{% endif %}
+                    {% if new.ren3|trim != '' %}<br/>{{ new.ren3 }}{% endif %}
+                    {% if new.ren4|trim != '' %}<br/>{{ new.ren4 }}{% endif %}
+                    {% if new.ren5|trim != '' %}<br/>{{ new.ren5 }}{% endif %}
+                    {% if new.ren6|trim != '' %}<br/>{{ new.ren6 }}{% endif %}
+                    {% if new.ren7|trim != '' %}<br/>{{ new.ren7 }}{% endif %}
+                    {% if new.ren8|trim != '' %}<br/>{{ new.ren8 }}{% endif %}
+                    {% if new.ren9|trim != '' %}<br/>{{ new.ren9 }}{% endif %}
+                    {% if new.ren10|trim != '' %}<br/>{{ new.ren10 }}{% endif %}
+                </p>
+            </div>
+            <div class="col-lg-6">
+                {% set url = "http://www.palmedicinalaboral.com.ar/images/NRLL/P" ~ new.fecha | date('d-m-y') ~ "_" ~ new.codigop ~ ".JPG" %}
+            {% if checkImage(url) %}
+                <img src= "{{ url }}" width="129" hspace="200" />
+            {% endif %}
+            </div>
+        </div>
         <hr>
     {% else %}
         <p>No hay novedades este año.</p>
