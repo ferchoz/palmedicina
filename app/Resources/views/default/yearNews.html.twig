@@ -26,10 +26,12 @@
                 </p>
             </div>
             <div class="col-lg-6">
-                {% set url = "http://www.palmedicinalaboral.com.ar/images/NRLL/P" ~ new.fecha | date('d-m-y') ~ "_" ~ new.codigop ~ ".JPG" %}
-            {% if checkImage(url) %}
-                <img src= "{{ url }}" width="129" hspace="200" />
-            {% endif %}
+                {#{% set url = "P" ~ new.fecha | date('d-m-y') ~ "_" ~ new.codigop ~ ".JPG" %}#}
+            {#{% if checkImage(url) %}#}
+                <img src="{{ "/img/logo.png" | imagine_filter('news_thumb') }}" />
+                {#<img src="{{ "../../htdocs/images/NRLL/" ~ url | imagine_filter('news_thumb') }}" />#}
+                {#<img src= "{{ url }}" width="129" hspace="200" />#}
+            {#{% endif %}#}
             </div>
         </div>
         <hr>

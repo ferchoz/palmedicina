@@ -127,7 +127,7 @@ sonata_media:
 
     filesystem:
         local:
-            directory:  %kernel.root_dir%/../public_html/uploads/media
+            directory:  %kernel.root_dir%/../web/uploads/media
             create:     false
     providers:
         image:
@@ -142,3 +142,14 @@ services:
         public: false
         tags:
             - { name: twig.extension }
+
+liip_imagine:
+    resolvers:
+       default:
+          web_path: ~
+    filter_sets:
+        cache: ~
+        news_thumb:
+            quality: 75
+            filters:
+                thumbnail: { size: [120, 90], mode: outbound }
