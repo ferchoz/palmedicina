@@ -23,7 +23,8 @@
         "sonata-project/admin-bundle": "~2.3",
         "sonata-project/doctrine-orm-admin-bundle": "~2.3",
         "jms/serializer-bundle": "~0.13",
-        "sonata-project/media-bundle": "~2.3"
+        "sonata-project/media-bundle": "~2.3",
+        "liip/imagine-bundle": "~1.2"
     },
     "scripts": {
         "post-install-cmd": [
@@ -47,7 +48,7 @@
     "minimum-stability": "stable",
     "extra": {
         "symfony-app-dir": "app",
-        "symfony-web-dir": "public_html",
+        "symfony-web-dir": "web",
         "incenteev-parameters": {
             "file": "app/config/parameters.yml"
         },
