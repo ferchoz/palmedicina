@@ -1,0 +1,86 @@
+{% extends 'layout.html.twig' %}
+
+{% block container %}
+    <h2>Estudios Médicos de {{ patient.paciente }}</h2>
+    <div class="row text-center">
+        <h3>PAL MEDICINA LABORAL S.R.L.</h3>
+        <p>Ituzaingo 1354 - Lan&uacute;s Este - Tel: 4247-7093 Linea rotativa</p>
+        <hr/>
+        <p>Departamento de Medicina Laboral</p>
+    </div>
+    <div class="row text-right">
+        <h4>{{ patient.fecha }}</h4>
+    </div>
+    <div class="row text-left">
+        <p>
+            Sr.(s) {{ patient.empresa }}<br/>
+            {{ patient.direccion }}<br/>
+            {{ patient.localidad }}<br/>
+            {{ patient.telefono }}<br/>
+        </p>
+    </div>
+    <div class="row text-center">
+        {% set file = old_images ~ "pacientes/" ~ patient.codigop | trim ~ ".jpg" %}
+        {% if file_exists(root_path ~ file) %}
+            <img src="{{ (file) | imagine_filter('patient_photo') }}" class="img-thumbnail"/>
+        {% endif %}
+    </div>
+    <div class="row text-justify">
+        <p>De nuestra mayor consideraci&oacute;n:</p>
+        <p>
+            Por la presente certificamos que el Sr./a. {{ patient.paciente }} con D.N.I. Nro. {{ patient.documento }} cumpliendo con lo establecido por la Ley Prov. 11.459 decreto 1712 y Ley Nacional 19587 decreto 351/79, realiz&oacute; el examen de {{ patient.examen }} obteniendo los siguientes resultados:
+        </p>
+        <br/>
+        <div class="row"><div class="col-xs-6 col-sm-3">{{ patient.r1est }}</div><div class="col-xs-6 col-sm-3">{{ patient.r1res }}</div></div>
+        <div class="row"><div class="col-xs-6 col-sm-3">{{ patient.r2est }}</div><div class="col-xs-6 col-sm-3">{{ patient.r2res }}</div></div>
+        <div class="row"><div class="col-xs-6 col-sm-3">{{ patient.r3est }}</div><div class="col-xs-6 col-sm-3">{{ patient.r3res }}</div></div>
+        <div class="row"><div class="col-xs-6 col-sm-3">{{ patient.r4est }}</div><div class="col-xs-6 col-sm-3">{{ patient.r4res }}</div></div>
+        <div class="row"><div class="col-xs-6 col-sm-3">{{ patient.r5est }}</div><div class="col-xs-6 col-sm-3">{{ patient.r5res }}</div></div>
+        <div class="row"><div class="col-xs-6 col-sm-3">{{ patient.r6est }}</div><div class="col-xs-6 col-sm-3">{{ patient.r6res }}</div></div>
+        <div class="row"><div class="col-xs-6 col-sm-3">{{ patient.r7est }}</div><div class="col-xs-6 col-sm-3">{{ patient.r7res }}</div></div>
+        <div class="row"><div class="col-xs-6 col-sm-3">{{ patient.r8est }}</div><div class="col-xs-6 col-sm-3">{{ patient.r8res }}</div></div>
+        <div class="row"><div class="col-xs-6 col-sm-3">{{ patient.r9est }}</div><div class="col-xs-6 col-sm-3">{{ patient.r9res }}</div></div>
+        <div class="row"><div class="col-xs-6 col-sm-3">{{ patient.r10est }}</div><div class="col-xs-6 col-sm-3">{{ patient.r10res }}</div></div>
+    </div>
+    <br/>
+    <br/>
+    <div class="row">
+        <p>
+            SP = Sin Particularidades<br />
+            N  = Normal<br />
+            RS = Ritmo Sinusal<br />
+            BS = Bradicardia Sinusal
+        </p>
+    </div>
+    <br/>
+    <br/>
+    <table width="401" border="0">
+        <tr>
+            <td width="184"><img src="{{ asset('img/Estudios2_clip_image001.jpg') }}" alt="FIRMA" width="125" height="129" hspace="50" /></td>
+            <td width="51">&nbsp;</td>
+            <td width="152"><img src="{{ asset('img/Estudios2_clip_image002.jpg') }}" alt="VISTO" width="43" height="114" hspace="100" /></p></td>
+        </tr>
+    </table>
+    <table width="401" border="0">
+        <tr>
+            <td width="184">_______________________</td>
+            <td width="51">&nbsp;</td>
+            <td width="152">___________________</td>
+        </tr>
+        <tr>
+            <td height="22"><div align="center"><font size="2"><strong>Dr. Babor Moises Norberto</strong></font> </div></td>
+            <td>&nbsp;</td>
+            <td><div align="center"><font size="-3">PAL MEDICINA LABORAL S.R.L. </font></div></td>
+        </tr>
+        <tr>
+            <td height="21"><div align="center"><font size="2"><strong>M&eacute;dico Director </strong></font></div></td>
+            <td>&nbsp;</td>
+            <td><div align="center"><font size="2">CUIT:30-70821879-9</font></div></td>
+        </tr>
+        <tr>
+            <td height="21"><div align="center"><font size="-2">M.N.41.664 M.P.25.562 </font></div></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+{% endblock container %}

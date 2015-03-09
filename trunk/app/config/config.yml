@@ -29,7 +29,7 @@ twig:
     strict_variables: "%kernel.debug%"
     globals:
         root_path: %kernel.root_dir%/../web
-        old_images: /old_images/NRLL/
+        old_images: /old_images/
 
 # Assetic Configuration
 assetic:
@@ -161,6 +161,10 @@ liip_imagine:
             quality: 75
             filters:
                 thumbnail: { size: [150, 113], mode: outbound }
+        patient_photo:
+            quality: 75
+            filters:
+                thumbnail: { size: [130, 130], mode: outbound }
 
 knp_paginator:
     page_range: 5                      # default page range used in pagination control

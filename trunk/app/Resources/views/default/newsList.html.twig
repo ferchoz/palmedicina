@@ -24,9 +24,9 @@
                 </p>
             </div>
             <div class="col-lg-6">
-                {% set file = old_images ~ "P" ~ new.fecha | date('d-m-y') ~ "_" ~ new.codigop ~ ".JPG" %}
+                {% set file = old_images ~ "NRLL/P" ~ new.fecha | date('d-m-y') ~ "_" ~ new.codigop ~ ".JPG" %}
                 {% if file_exists(root_path ~ file) %}
-                    <img src="{{ (file) | imagine_filter('news_thumb') }}" />
+                    <img src="{{ (file) | imagine_filter('news_thumb') }}" class="img-thumbnail"/>
                 {% endif %}
             </div>
         </div>
