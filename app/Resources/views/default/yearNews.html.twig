@@ -26,12 +26,10 @@
                 </p>
             </div>
             <div class="col-lg-6">
-                {#{% set url = "P" ~ new.fecha | date('d-m-y') ~ "_" ~ new.codigop ~ ".JPG" %}#}
-            {#{% if checkImage(url) %}#}
-                <img src="{{ "/img/logo.png" | imagine_filter('news_thumb') }}" />
-                {#<img src="{{ "../../htdocs/images/NRLL/" ~ url | imagine_filter('news_thumb') }}" />#}
-                {#<img src= "{{ url }}" width="129" hspace="200" />#}
-            {#{% endif %}#}
+                {% set file = old_images ~ "P" ~ new.fecha | date('d-m-y') ~ "_" ~ new.codigop ~ ".JPG" %}
+            {% if file_exists(root_path ~ file) %}
+                <img src="{{ (file) | imagine_filter('news_thumb') }}" />
+            {% endif %}
             </div>
         </div>
         <hr>

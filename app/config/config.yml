@@ -27,6 +27,9 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    globals:
+        root_path: %kernel.root_dir%/../web
+        old_images: /old_images/NRLL/
 
 # Assetic Configuration
 assetic:
@@ -142,6 +145,11 @@ services:
         public: false
         tags:
             - { name: twig.extension }
+    login_listener:
+        class: 'AppBundle\Listener\LoginListener'
+        arguments: ['@security.context', '@doctrine']
+        tags:
+            - { name: 'kernel.event_listener', event: 'security.interactive_login' }
 
 liip_imagine:
     resolvers:
@@ -152,4 +160,4 @@ liip_imagine:
         news_thumb:
             quality: 75
             filters:
-                thumbnail: { size: [120, 90], mode: outbound }
+                thumbnail: { size: [150, 113], mode: outbound }

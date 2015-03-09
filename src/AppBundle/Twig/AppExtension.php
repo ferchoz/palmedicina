@@ -6,13 +6,13 @@ class AppExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            new \Twig_SimpleFunction('checkImage', array($this, 'checkImageFunction')),
+            new \Twig_SimpleFunction('file_exists', array($this, 'fileExistsFunction')),
         );
     }
 
-    public function checkImageFunction($url)
+    public function fileExistsFunction($file)
     {
-        return (bool) @fopen($url, 'r');
+        return file_exists($file);
     }
 
     public function getName()
