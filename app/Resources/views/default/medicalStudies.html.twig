@@ -1,0 +1,19 @@
+{% extends 'layout.html.twig' %}
+
+{% block container %}
+    <h2>Estudios Médicos</h2>
+    <form method="post" class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label" for="patient"></label>
+            <select id="patient" name="patient" class="form-control">
+                <option disabled selected>Selecciona un Paciente...</option>
+                {% for patient in patients %}
+                    <option value="{{ patient.paciente }}">{{ patient.paciente }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-default">Obtener</button>
+        </div>
+    </form>
+{% endblock container %}

@@ -105,4 +105,28 @@ class DefaultController extends Controller
 
         return $this->render('default/yearNews.html.twig', array('news' => $pagination));
     }
+
+    /**
+     * @Route("/consultas/estudios-medicos", name="medicalStudies")
+     */
+    public function medicalStudiesAction(Request $request)
+    {
+        $user = $this->getUser();
+        $oldEm = $this->get('doctrine')->getManager('old');
+
+        if ($request->isMethod('POST')) {
+            $query = $oldEm->createQuery("SELECT a FROM OldBundle:iESTUDIOS a where a.codigo = :codigo AND a.paciente = :paciente");
+            $query->setParameter('codigo', $user->getCodigopal());
+            $query->setParameter('paciente', $request->get('patient'));
+            $patient = $query->getResult();
+
+            return $this->render('default/medicalStudiesUser.html.twig', array('patient' => array_shift($patient)));
+        } else {
+            $query = $oldEm->createQuery("SELECT a FROM OldBundle:iESTUDIOS a where a.codigo = :codigo GROUP BY a.paciente ORDER BY a.paciente");
+            $query->setParameter('codigo', $user->getCodigopal());
+            $patients = $query->getResult();
+
+            return $this->render('default/medicalStudies.html.twig', array('patients' => $patients));
+        }
+    }
 }
