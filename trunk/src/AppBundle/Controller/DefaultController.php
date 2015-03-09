@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
@@ -42,46 +43,66 @@ class DefaultController extends Controller
     /**
      * @Route("/consultas/novedades-del-dia", name="todayNews")
      */
-    public function todayNewsAction()
+    public function todayNewsAction(Request $request)
     {
         $user = $this->getUser();
         $news = $this->get('doctrine')
             ->getRepository('OldBundle:iNOVEDADES', 'old')
             ->findBy(
-                array('codigoe' => $user->getCodigopal(), 'fecha' => new \DateTime('now')),
+                array('codigoe' => $user->getCodigopal(), 'fecha' => new \DateTime('today')),
                 array('fecha' => 'DESC')
             );
         ;
-        return $this->render('default/todayNews.html.twig', array('news' => $news));
+
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $news,
+            $request->query->get('page', 1)/*page number*/,
+            10/*limit per page*/
+        );
+
+        return $this->render('default/todayNews.html.twig', array('news' => $pagination));
     }
 
     /**
      * @Route("/consultas/novedades-del-mes", name="monthNews")
      */
-    public function monthNewsAction()
+    public function monthNewsAction(Request $request)
     {
         $user = $this->getUser();
         $oldEm = $this->get('doctrine')->getManager('old');
         $query = $oldEm->createQuery("SELECT a FROM OldBundle:iNOVEDADES a where a.codigoe = :codigo AND a.fecha >= :date ORDER BY a.fecha DESC");
         $query->setParameter('codigo', $user->getCodigopal());
         $query->setParameter('date', new \DateTime('midnight first day of this month'));
-        $news = $query->getResult();
 
-        return $this->render('default/monthNews.html.twig', array('news' => $news));
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $query,
+            $request->query->get('page', 1)/*page number*/,
+            10/*limit per page*/
+        );
+
+        return $this->render('default/monthNews.html.twig', array('news' => $pagination));
     }
 
     /**
      * @Route("/consultas/novedades-del-anio", name="yearNews")
      */
-    public function yearNewsAction()
+    public function yearNewsAction(Request $request)
     {
         $user = $this->getUser();
         $oldEm = $this->get('doctrine')->getManager('old');
         $query = $oldEm->createQuery("SELECT a FROM OldBundle:iNOVEDADES a where a.codigoe = :codigo AND a.fecha >= :date ORDER BY a.fecha DESC");
         $query->setParameter('codigo', $user->getCodigopal());
         $query->setParameter('date', new \DateTime('first day of January 2015'));
-        $news = $query->getResult();
 
-        return $this->render('default/yearNews.html.twig', array('news' => $news));
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $query,
+            $request->query->get('page', 1)/*page number*/,
+            10/*limit per page*/
+        );
+
+        return $this->render('default/yearNews.html.twig', array('news' => $pagination));
     }
 }

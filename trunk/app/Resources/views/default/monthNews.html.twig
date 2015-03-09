@@ -1,18 +1,3 @@
-{% extends 'layout.html.twig' %}
+{% extends 'default/newsList.html.twig' %}
 
 {% block title %}{{ parent() }} - Novedades del mes{% endblock %}
-
-{% block container %}
-    {% for new in news %}
-        <ul>
-            <li>Fecha de atención: {{ new.fecha | date('d/m/Y') }}</li>
-            <li>Paciente: {{ new.nombre }}</li>
-            <li>Tipo de atención: {{ new.tiponov }}</li>
-            <li>Referencia: {{ new.enlace }}</li>
-        </ul>
-        <p>{{ new.ren1 }}</p>
-        <hr>
-    {% else %}
-        <p>No hay novedades este mes.</p>
-    {% endfor %}
-{% endblock container %}
