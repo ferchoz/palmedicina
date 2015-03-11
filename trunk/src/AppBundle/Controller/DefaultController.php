@@ -21,7 +21,8 @@ class DefaultController extends Controller
      */
     public function companyAction()
     {
-        return $this->render('default/index.html.twig');
+        $slides = $this->getDoctrine()->getRepository('AppBundle:SlideCompany')->findAll();
+        return $this->render('default/index.html.twig', array('slides' => $slides));
     }
 
     /**
@@ -127,6 +128,36 @@ class DefaultController extends Controller
             $patients = $query->getResult();
 
             return $this->render('default/medicalStudies.html.twig', array('patients' => $patients));
+        }
+    }
+
+    /**
+     * @Route("/consultas/historia-clinica", name="clinicStory")
+     */
+    public function clinicStoryAction(Request $request)
+    {
+        $user = $this->getUser();
+        $oldEm = $this->get('doctrine')->getManager('old');
+
+        if ($request->isMethod('POST')) {
+            $query = $oldEm->createQuery("SELECT a FROM OldBundle:iNOVEDADES a where a.codigoe = :codigo AND a.nombre = :paciente");
+            $query->setParameter('codigo', $user->getCodigopal());
+            $query->setParameter('paciente', $request->get('patient'));
+//            $patients = $query->getResult();
+            $paginator  = $this->get('knp_paginator');
+            $pagination = $paginator->paginate(
+                $query,
+                $request->query->get('page', 1)/*page number*/,
+                10/*limit per page*/
+            );
+
+            return $this->render('default/clinicStoryUser.html.twig', array('patients' => $pagination));
+        } else {
+            $query = $oldEm->createQuery("SELECT a FROM OldBundle:iESTUDIOS a where a.codigo = :codigo GROUP BY a.paciente ORDER BY a.paciente");
+            $query->setParameter('codigo', $user->getCodigopal());
+            $patients = $query->getResult();
+
+            return $this->render('default/clinicStory.html.twig', array('patients' => $patients));
         }
     }
 }

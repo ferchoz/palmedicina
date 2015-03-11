@@ -1,0 +1,42 @@
+{% extends 'layout.html.twig' %}
+
+{% block container %}
+    <h2>Historia Clínica de {{ patients.0.nombre }}</h2>
+    {% for new in patients %}
+        <div class="row">
+            <div class="col-lg-6">
+                <ul>
+                    <li>Fecha de atención: {{ new.fecha | date('d/m/Y') }}</li>
+                    <li>Paciente: <strong>{{ new.nombre }}</strong></li>
+                    <li>Tipo de atención: {{ new.tiponov }}</li>
+                    <li>Referencia: {{ new.enlace }}</li>
+                </ul>
+                <p>
+                    {{ new.ren1 }}
+                    {% if new.ren2|trim != '' %}<br/>{{ new.ren2 }}{% endif %}
+                    {% if new.ren3|trim != '' %}<br/>{{ new.ren3 }}{% endif %}
+                    {% if new.ren4|trim != '' %}<br/>{{ new.ren4 }}{% endif %}
+                    {% if new.ren5|trim != '' %}<br/>{{ new.ren5 }}{% endif %}
+                    {% if new.ren6|trim != '' %}<br/>{{ new.ren6 }}{% endif %}
+                    {% if new.ren7|trim != '' %}<br/>{{ new.ren7 }}{% endif %}
+                    {% if new.ren8|trim != '' %}<br/>{{ new.ren8 }}{% endif %}
+                    {% if new.ren9|trim != '' %}<br/>{{ new.ren9 }}{% endif %}
+                    {% if new.ren10|trim != '' %}<br/>{{ new.ren10 }}{% endif %}
+                </p>
+            </div>
+            <div class="col-lg-6">
+                {% set file = old_images ~ "NRLL/P" ~ new.fecha | date('d-m-y') ~ "_" ~ new.codigop ~ ".JPG" %}
+                {% if file_exists(root_path ~ file) %}
+                    <img src="{{ (file) | imagine_filter('news_thumb') }}" class="img-thumbnail"/>
+                {% endif %}
+            </div>
+        </div>
+        <hr>
+    {% else %}
+        <p>No hay estudios para este paciente.</p>
+    {% endfor %}
+
+    <div class="text-center">
+        {{ knp_pagination_render(patients) }}
+    </div>
+{% endblock container %}

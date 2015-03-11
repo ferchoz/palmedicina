@@ -123,7 +123,7 @@ sonata_media:
             providers:
                 - sonata.media.provider.image
             formats:
-                big:   { width: 500 , quality: 90}
+                big:   { width: 1140, quality: 75}
     cdn:
         server:
             path: /uploads/media # http://media.sonata-project.org/
@@ -135,6 +135,7 @@ sonata_media:
     providers:
         image:
             resizer: sonata.media.resizer.square
+
 sonata_admin:
     title:      Palmedicina Administrador
     title_logo: img/logo.png
@@ -150,6 +151,14 @@ services:
         arguments: ['@security.context', '@doctrine']
         tags:
             - { name: 'kernel.event_listener', event: 'security.interactive_login' }
+    app.mediapathextension:
+        class: AppBundle\Twig\MediaPathExtension
+        public: false
+        arguments:
+            - @service_container
+            - @sonata.media.manager.media
+        tags:
+            - { name: twig.extension }
 
 liip_imagine:
     resolvers:
@@ -165,6 +174,10 @@ liip_imagine:
             quality: 75
             filters:
                 thumbnail: { size: [130, 130], mode: outbound }
+        slider_company_big:
+            quality: 75
+            filters:
+                thumbnail: { size: [1140, 300], mode: outbound }
 
 knp_paginator:
     page_range: 5                      # default page range used in pagination control
