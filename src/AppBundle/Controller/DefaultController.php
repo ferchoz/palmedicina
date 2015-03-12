@@ -143,7 +143,6 @@ class DefaultController extends Controller
             $query = $oldEm->createQuery("SELECT a FROM OldBundle:iNOVEDADES a where a.codigoe = :codigo AND a.nombre = :paciente");
             $query->setParameter('codigo', $user->getCodigopal());
             $query->setParameter('paciente', $request->get('patient'));
-//            $patients = $query->getResult();
             $paginator  = $this->get('knp_paginator');
             $pagination = $paginator->paginate(
                 $query,
@@ -159,5 +158,46 @@ class DefaultController extends Controller
 
             return $this->render('default/clinicStory.html.twig', array('patients' => $patients));
         }
+    }
+
+    /**
+     * @Route("/consultas/cuenta-corriente", name="checkingAccount")
+     */
+    public function checkingAccountAction(Request $request)
+    {
+        $user = $this->getUser();
+        $oldEm = $this->get('doctrine')->getManager('old');
+        $query = $oldEm->createQuery("SELECT a FROM OldBundle:iCTADAT a WHERE a.codigoe = :codigo ORDER BY a.fecha");
+        $query->setParameter('codigo', $user->getCodigopal());
+        $datas = $query->getResult();
+
+        return $this->render('default/checkingAccount.html.twig', array('datas' => $datas));
+    }
+
+    /**
+     * @Route("/consultas/ver-factura/{nr}", name="seeBill")
+     */
+    public function seeBillAction(Request $request, $nr)
+    {
+        $user = $this->getUser();
+        $oldEm = $this->get('doctrine')->getManager('old');
+        $query = $oldEm->createQuery("SELECT a FROM OldBundle:iCTADAT a WHERE a.codigoe = :codigo AND a.numero = :numero ORDER BY a.fecha");
+        $query->setParameter('codigo', $user->getCodigopal());
+        $query->setParameter('numero', $nr);
+        $bill = $query->getResult();
+        $bill = array_shift($bill);
+
+        $query = $oldEm->createQuery("SELECT a FROM OldBundle:iCTADET a WHERE a.sucursal = :sucursal AND a.numero = :numero");
+        $query->setParameter('sucursal', $bill->getSucursal());
+        $query->setParameter('numero', $nr);
+        $rows = $query->getResult();
+
+        return $this->render(
+            'default/seeBill.html.twig',
+            array(
+                'bill' => $bill,
+                'rows' => $rows,
+            )
+        );
     }
 }

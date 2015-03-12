@@ -1,0 +1,47 @@
+{% extends 'layout.html.twig' %}
+
+{% set totalAccount = 0 %}
+
+{% block container %}
+    <h1>Saldos Pendientes</h1>
+    <div class="row">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>FECHA</th>
+                    <th>COMPROBANTE</th>
+                    <th>NUMERO</th>
+                    <th class="text-right">IMPORTE</th>
+                    <th class="text-right">SALDO</th>
+                </tr>
+            </thead>
+            <tbody>
+        {% for data in datas %}
+                <tr>
+                    <td>{{ data.fecha|date('d/m/Y') }}</td>
+                    <td>{{ data.tipocomp }}</td>
+                    <td><a href="{{ path('seeBill', {'nr': data.numero}) }}" data-toggle="tooltip" data-placement="top" title="Ver Factura">{{ data.numero }}</a></td>
+                    <td class="text-right">${{ data.total|number_format(2, ',', '.') }}</td>
+                    <td class="text-right">${{ data.saldo|number_format(2, ',', '.') }}</td>
+                </tr>
+            {% set totalAccount = totalAccount+data.saldo %}
+        {% endfor %}
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="4" class="text-right"><strong>Total Saldo:</strong></td>
+                <td class="text-right"><strong>${{ totalAccount|number_format(2, ',', '.') }}</strong></td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+{% endblock container %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+{% endblock %}
