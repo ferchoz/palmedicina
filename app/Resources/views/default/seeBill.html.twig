@@ -78,8 +78,12 @@
             <tr>
                 <td height="87">&nbsp;</td>
                 <td colspan="5">&nbsp;</td>
+            {% if bill.letra != 'X' %}
                 <td colspan="2">Percepcion: {{ bill.porceper }}</td>
                 <td>{{ bill.impoper }}</td>
+            {% else %}
+                <td colspan="3"></td>
+            {% endif %}
             </tr>
             <tr>
                 <td height="19">&nbsp;</td>
