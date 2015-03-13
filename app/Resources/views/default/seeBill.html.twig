@@ -107,5 +107,29 @@
             </tr>
             </tfoot>
         </table>
+        <hr/>
+        <table class="table table-striped">
+            <caption>Prestaciones Facturadas.</caption>
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Nombre</th>
+                    <th>Estudio</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for row in services %}
+                <tr>
+                    <td>{{ row.fecha|date('d/m/Y') }}</td>
+                    <td>{{ row.nombre }}</td>
+                    <td>{{ row.estudio }}</td>
+                    <td>{{ row.cantidad }}</td>
+                    <td>{{ row.precio|number_format(2, ',', '.') }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
     </div>
 {% endblock container %}

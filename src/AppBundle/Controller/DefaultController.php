@@ -197,11 +197,17 @@ class DefaultController extends Controller
         $query->setParameter('numero', $nr);
         $rows = $query->getResult();
 
+        $query = $oldEm->createQuery("SELECT a FROM OldBundle:iPRESTAWEB a WHERE a.codigoe = :codigo AND a.numero = :numero");
+        $query->setParameter('codigo', $user->getCodigopal());
+        $query->setParameter('numero', $nr);
+        $services = $query->getResult();
+
         return $this->render(
             'default/seeBill.html.twig',
             array(
-                'bill' => $bill,
-                'rows' => $rows,
+                'bill'      => $bill,
+                'rows'      => $rows,
+                'services'  => $services,
             )
         );
     }
