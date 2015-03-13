@@ -185,6 +185,11 @@ class DefaultController extends Controller
         $query->setParameter('codigo', $user->getCodigopal());
         $query->setParameter('numero', $nr);
         $bill = $query->getResult();
+        if (!$bill) {
+            throw $this->createNotFoundException(
+                'La factura '.$nr.' no existe'
+            );
+        }
         $bill = array_shift($bill);
 
         $query = $oldEm->createQuery("SELECT a FROM OldBundle:iCTADET a WHERE a.sucursal = :sucursal AND a.numero = :numero");

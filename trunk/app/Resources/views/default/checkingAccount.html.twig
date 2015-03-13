@@ -20,7 +20,11 @@
                 <tr>
                     <td>{{ data.fecha|date('d/m/Y') }}</td>
                     <td>{{ data.tipocomp }}</td>
-                    <td><a href="{{ path('seeBill', {'nr': data.numero}) }}" data-toggle="tooltip" data-placement="top" title="Ver Factura">{{ data.numero }}</a></td>
+                    <td>
+                        <a href="{{ path('seeBill', {'nr': data.numero}) }}" data-toggle="tooltip" data-placement="top" title="Ver Factura">
+                            <span class="glyphicon glyphicon-file" aria-hidden="true"></span>{{ data.numero }}
+                        </a>
+                    </td>
                     <td class="text-right">${{ data.total|number_format(2, ',', '.') }}</td>
                     <td class="text-right">${{ data.saldo|number_format(2, ',', '.') }}</td>
                 </tr>
