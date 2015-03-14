@@ -25,7 +25,9 @@
         "jms/serializer-bundle": "~0.13",
         "sonata-project/media-bundle": "~2.3",
         "liip/imagine-bundle": "~1.2",
-        "knplabs/knp-paginator-bundle": "~2.4"
+        "knplabs/knp-paginator-bundle": "~2.4",
+        "gedmo/doctrine-extensions": "~2.3",
+        "sonata-project/user-bundle": "~2.2"
     },
     "scripts": {
         "post-install-cmd": [

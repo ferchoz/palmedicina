@@ -1,11 +1,21 @@
 services:
-    sonata.admin.post:
+    sonata.admin.slide_company:
         class: AppBundle\Admin\SlideCompanyAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Slide Company" }
+            - { name: sonata.admin, manager_type: orm, group: "Contenido", label: "Slide Empresa" }
         arguments:
             - ~
             - AppBundle\Entity\SlideCompany
             - ~
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+    sonata.admin.examen_medico:
+        class: AppBundle\Admin\ServiciosExamenMedicoAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Formularios", label: "Examenes Medicos" }
+        arguments:
+            - ~
+            - AppBundle\Entity\ServiciosExamenMedico
+            - AppBundle:ServiciosExamenMedicoAdmin
         calls:
             - [ setTranslationDomain, [AppBundle]]
