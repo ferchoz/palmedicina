@@ -1,0 +1,183 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}{{ parent() }} - Encuesta de Satisfacción {{ "now"|date("Y") }}{% endblock %}
+
+{% block container %}
+    <h2>Encuesta de Satisfacción {{ "now"|date("Y") }}</h2>
+    <p>
+        <em>Toda la información provista sera utilizada con total confidencialidad y a fines de mejorar la calidad de nuestros servicios.<br/>
+            Esta encuesta dura aproximadamente 3 minutos.</em>
+    </p>
+    <p>
+        <em>* campos requeridos</em>
+    </p>
+    <hr/>
+    {{ form_start(form, {'action': path('satisfactionSurvey'), 'method':'POST', 'attr':{'class':'form-horizontal', 'role':'form', 'data-toggle':'validator'}}) }}
+        <p>Datos de la Empresa:</p>
+        {{ form_errors(form) }}
+        <div class="form-group">
+            <label for="encuesta_empresa">*Empresa:</label>
+            {{ form_widget(form.empresa, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label for="encuesta_responde">*Responde:</label>
+            {{ form_widget(form.responde, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label for="encuesta_cargo">*Cargo:</label>
+            {{ form_widget(form.cargo, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        <p>Uso del servicio:</p>
+        <div class="form-group">
+            <label for="encuesta_comoConocioElServicio">*Como conoció el servicio de Pal Medicina Laboral?</label>
+            {{ form_widget(form.comoConocioElServicio, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label for="encuesta_porQueNosEligio">*Por qué nos eligió?</label>
+            {{ form_widget(form.porQueNosEligio, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label for="encuesta_cuantoTiempo">*Cuánto tiempo lleva utilizando nuestros servicios de medicina laboral?</label>
+            {{ form_widget(form.cuantoTiempo, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label for="encuesta_conQueFrecuencia">*Con qué frecuencia los utiliza?</label>
+            {{ form_widget(form.conQueFrecuencia, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        <p>Satisfacción general</p>
+        <div class="form-group">
+            <label for="encuesta_satisfaccionGeneral">*Cuál es el grado de satisfacción general con los servicios ofrecidos?</label>
+            {{ form_widget(form.satisfaccionGeneral, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        <p>Recomendacíon</p>
+        <div class="form-group">
+            <label for="encuesta_haRecomendado">*Ha recomendado nuestro servicio a otra empresa?</label>
+            {{ form_widget(form.haRecomendado, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        <p>En caso de constestar afirmativamente pase a Selección de atributos. Caso contrario, responda las siguientes preguntas.</p>
+        <div class="form-group">
+            <label for="encuesta_recomendariaNuestroServicio">Recomendaría nuestro servicio?</label>
+            {{ form_widget(form.recomendariaNuestroServicio, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        <p>Satisfacción por sectores</p>
+        <p>*Cómo calificaría los siguientes servicios?</p>
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th></th>
+                <th class="text-center">Excelente</th>
+                <th class="text-center">Muy bueno</th>
+                <th class="text-center">Bueno</th>
+                <th class="text-center">Regular</th>
+                <th class="text-center">Malo</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row"><label for="encuesta_atencionTelefonica">Atención telefónica</label></th>
+                <td class="text-center">{{ form_widget(form.atencionTelefonica.0) }}</td>
+                <td class="text-center">{{ form_widget(form.atencionTelefonica.1) }}</td>
+                <td class="text-center">{{ form_widget(form.atencionTelefonica.2) }}</td>
+                <td class="text-center">{{ form_widget(form.atencionTelefonica.3) }}</td>
+                <td class="text-center">{{ form_widget(form.atencionTelefonica.4) }}</td>
+            </tr>
+            <tr>
+                <th scope="row"><label for="encuesta_visitasDomicilio">Visitas a domicilio</label></th>
+                <td class="text-center">{{ form_widget(form.visitasDomicilio.0) }}</td>
+                <td class="text-center">{{ form_widget(form.visitasDomicilio.1) }}</td>
+                <td class="text-center">{{ form_widget(form.visitasDomicilio.2) }}</td>
+                <td class="text-center">{{ form_widget(form.visitasDomicilio.3) }}</td>
+                <td class="text-center">{{ form_widget(form.visitasDomicilio.4) }}</td>
+            </tr>
+            <tr>
+                <th scope="row"><label for="encuesta_examenesMedicos">Exámenes médicos</label></th>
+                <td class="text-center">{{ form_widget(form.examenesMedicos.0) }}</td>
+                <td class="text-center">{{ form_widget(form.examenesMedicos.1) }}</td>
+                <td class="text-center">{{ form_widget(form.examenesMedicos.2) }}</td>
+                <td class="text-center">{{ form_widget(form.examenesMedicos.3) }}</td>
+                <td class="text-center">{{ form_widget(form.examenesMedicos.4) }}</td>
+            </tr>
+            <tr>
+                <th scope="row"><label for="encuesta_art">A.R.T.</label></th>
+                <td class="text-center">{{ form_widget(form.art.0) }}</td>
+                <td class="text-center">{{ form_widget(form.art.1) }}</td>
+                <td class="text-center">{{ form_widget(form.art.2) }}</td>
+                <td class="text-center">{{ form_widget(form.art.3) }}</td>
+                <td class="text-center">{{ form_widget(form.art.4) }}</td>
+            </tr>
+            <tr>
+                <th scope="row"><label for="encuesta_facturacion">Facturación</label></th>
+                <td class="text-center">{{ form_widget(form.facturacion.0) }}</td>
+                <td class="text-center">{{ form_widget(form.facturacion.1) }}</td>
+                <td class="text-center">{{ form_widget(form.facturacion.2) }}</td>
+                <td class="text-center">{{ form_widget(form.facturacion.3) }}</td>
+                <td class="text-center">{{ form_widget(form.facturacion.4) }}</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <p>Página web - ACCESO CLIENTES -</p>
+        <div class="form-group">
+            <label for="encuesta_paginaWeb">*Su empresa, se encuentra registrada en la sección Acceso Clientes?</label>
+            {{ form_widget(form.paginaWeb, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        <p>En caso de contestar negativamente pase a Recomendación y sugerencias. Caso contrario, conteste las siguentes preguntas.</p>
+        <div class="form-group">
+            <label for="encuesta_conQueFrecuenciaUtilizaElSitio">Con qué frecuencia utiliza el sitio web?</label>
+            {{ form_widget(form.conQueFrecuenciaUtilizaElSitio, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label for="encuesta_comoConsideraLaVisualizacion">Como considera la visualización de la información?</label>
+            {{ form_widget(form.comoConsideraLaVisualizacion, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label for="encuesta_comoEvaluaLaFacilidad">Como evalúa la facilidad de navegación?</label>
+            {{ form_widget(form.comoEvaluaLaFacilidad, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label for="encuesta_comoCalificariaAccesoClientes">Como calificaría Acceso Clientes?</label>
+            {{ form_widget(form.comoCalificariaAccesoClientes, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label for="encuesta_opinion">Su opinión es muy importante para nosotros, que incorporaría al sitio web para mejorar o ampliar los servicios online?</label>
+            {{ form_widget(form.opinion, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        <p>Experiencia y sugerencias</p>
+        <div class="form-group">
+            <label for="encuesta_experienciaSugerencias">*Basándose en su propia experiencia con Pal Medicina Laboral, buscaría otro prestador / clinica?</label>
+            {{ form_widget(form.experienciaSugerencias, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label for="encuesta_haTenidoAlgunProblema">*Ha tenido algún problema a la hora de usar el servicio?</label>
+            {{ form_widget(form.haTenidoAlgunProblema, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        <p>En caso de contestar negativamente pase a la ultima pregunta. Caso contrario, responda las siguientes.</p>
+        <div class="form-group">
+            <label for="encuesta_seResolvieronEsosProblemas">Se resolvieron esos problemas de forma satisfactoria?</label>
+            {{ form_widget(form.seResolvieronEsosProblemas, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label for="encuesta_comentarios">Hay algún comentario o sugerencia que le gustaría decirnos sobre el servicio que no le hayamos preguntado en esta encuesta? Si es así, díganos de que se trata:</label>
+            {{ form_widget(form.comentarios, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-default">Enviar</button>
+            <button type="reset" class="btn btn-default">Limpiar</button>
+        </div>
+    {{ form_end(form) }}
+{% endblock container %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('bootstrap-validator/validator.min.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}{{ parent() }} - Consultas{% endblock %}
+
+{% block container %}
+    <h2>Consultas</h2>
+    <p>
+        <em>Si usted es titular o encargado de la empresa, solicite la prestación a traves de este medio, completando los siguientes datos:</em>
+    </p>
+    <p>
+        <em>* campos requeridos</em>
+    </p>
+    <hr/>
+    {{ form_start(form, {'action': path('contactUs'), 'method':'POST', 'attr':{'class':'form-horizontal', 'role':'form', 'data-toggle':'validator'}}) }}
+        <p>Datos de la Empresa:</p>
+        {{ form_errors(form) }}
+        <div class="form-group">
+            <label for="contactus_razonSocial" class="col-sm-3 control-label">*Razón Social:</label>
+            <div class="col-sm-9">
+                {{ form_widget(form.razonSocial, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="contactus_apellidoNombreSolicitante" class="col-sm-3 control-label">*Apellido y Nombre del solicitante:</label>
+            <div class="col-sm-9">
+                {{ form_widget(form.apellidoNombreSolicitante, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="contactus_email" class="col-sm-3 control-label">*E-mail:</label>
+            <div class="col-sm-9">
+                {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="contactus_consulta" class="col-sm-3 control-label">*Consulta:</label>
+            <div class="col-sm-9">
+                {{ form_widget(form.consulta, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-9">
+                <button type="submit" class="btn btn-default">Enviar</button>
+                <button type="reset" class="btn btn-default">Limpiar</button>
+            </div>
+        </div>
+    {{ form_end(form) }}
+{% endblock container %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('bootstrap-validator/validator.min.js') }}"></script>
+{% endblock %}

@@ -43,7 +43,6 @@ services:
         calls:
             - [ setTranslationDomain, [AppBundle]]
 
-
     sonata.admin.accidente_trabajo:
         class: AppBundle\Admin\ServiciosAccidenteTrabajoAdmin
         tags:
@@ -51,6 +50,28 @@ services:
         arguments:
             - ~
             - AppBundle\Entity\ServiciosAccidenteTrabajo
+            - AppBundle:ServiciosFormAdmin
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+
+    sonata.admin.encuesta_satisfaccion:
+        class: AppBundle\Admin\ServiciosEncuestaSatisfaccionAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: "Encuesta de Satisfacción" }
+        arguments:
+            - ~
+            - AppBundle\Entity\ServiciosEncuestaSatisfaccion
+            - AppBundle:ServiciosFormAdmin
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+
+    sonata.admin.consultas:
+        class: AppBundle\Admin\ServiciosContactUsAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: "Consultas" }
+        arguments:
+            - ~
+            - AppBundle\Entity\ServiciosContactUs
             - AppBundle:ServiciosFormAdmin
         calls:
             - [ setTranslationDomain, [AppBundle]]
