@@ -4,10 +4,14 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\ServiciosAccidenteTrabajo;
 use AppBundle\Entity\ServiciosAtencionConsultorio;
+use AppBundle\Entity\ServiciosContactUs;
+use AppBundle\Entity\ServiciosEncuestaSatisfaccion;
 use AppBundle\Entity\ServiciosExamenMedico;
 use AppBundle\Entity\ServiciosVisitaDomicilio;
 use AppBundle\Form\ServiciosAccidenteTrabajoType;
 use AppBundle\Form\ServiciosAtencionConsultorioType;
+use AppBundle\Form\ServiciosContactUsType;
+use AppBundle\Form\ServiciosEncuestaSatisfaccionType;
 use AppBundle\Form\ServiciosExamenMedicoType;
 use AppBundle\Form\ServiciosVisitaDomicilioType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -91,7 +95,6 @@ class OnlineServicesController extends Controller
         );
     }
 
-
     /**
      * @Route("/consultas/servicios-online/accidente-trabajo", name="workAccident")
      */
@@ -113,6 +116,52 @@ class OnlineServicesController extends Controller
 
         return $this->render(
             'OnlineServices/workAccident.html.twig',
+            array('form' => $form->createView())
+        );
+    }
+
+    /**
+     * @Route("/consultas/servicios-online/encuesta-satisfaccion", name="satisfactionSurvey")
+     */
+    public function satisfactionSurveyAction(Request $request)
+    {
+        $satisfactionSurvey = new ServiciosEncuestaSatisfaccion();
+        $form = $this->createForm(new ServiciosEncuestaSatisfaccionType(), $satisfactionSurvey);
+
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($satisfactionSurvey);
+            $em->flush();
+            return $this->redirect($this->generateUrl('formSuccess'));
+        }
+
+        return $this->render(
+            'OnlineServices/satisfactionSurvey.html.twig',
+            array('form' => $form->createView())
+        );
+    }
+
+    /**
+     * @Route("/consultas/ayuda/consultas", name="contactUs")
+     */
+    public function contactUsAction(Request $request)
+    {
+        $contactUs = new ServiciosContactUs();
+        $form = $this->createForm(new ServiciosContactUsType(), $contactUs);
+
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($contactUs);
+            $em->flush();
+            return $this->redirect($this->generateUrl('formSuccess'));
+        }
+
+        return $this->render(
+            'OnlineServices/contactUs.html.twig',
             array('form' => $form->createView())
         );
     }

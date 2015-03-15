@@ -164,6 +164,8 @@ sonata_admin:
                     - sonata.admin.atencion_consultorio
                     - sonata.admin.visita_domicilio
                     - sonata.admin.accidente_trabajo
+                    - sonata.admin.encuesta_satisfaccion
+                    - sonata.admin.consultas
             acme.admin.group.user:
                 label: Usuarios
                 icon: '<i class="fa fa-users"></i>'
