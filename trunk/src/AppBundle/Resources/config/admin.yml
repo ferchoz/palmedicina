@@ -2,20 +2,55 @@ services:
     sonata.admin.slide_company:
         class: AppBundle\Admin\SlideCompanyAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Contenido", label: "Slide Empresa" }
+            - { name: sonata.admin, manager_type: orm, label: "Slide Empresa" }
         arguments:
             - ~
             - AppBundle\Entity\SlideCompany
             - ~
         calls:
             - [ setTranslationDomain, [AppBundle]]
+
     sonata.admin.examen_medico:
         class: AppBundle\Admin\ServiciosExamenMedicoAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Formularios", label: "Examenes Medicos" }
+            - { name: sonata.admin, manager_type: orm, label: "Exámenes Médicos" }
         arguments:
             - ~
             - AppBundle\Entity\ServiciosExamenMedico
-            - AppBundle:ServiciosExamenMedicoAdmin
+            - AppBundle:ServiciosFormAdmin
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+
+    sonata.admin.atencion_consultorio:
+        class: AppBundle\Admin\ServiciosAtencionConsultorioAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: "Atención en Consultorio" }
+        arguments:
+            - ~
+            - AppBundle\Entity\ServiciosAtencionConsultorio
+            - AppBundle:ServiciosFormAdmin
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+
+    sonata.admin.visita_domicilio:
+        class: AppBundle\Admin\ServiciosVisitaDomicilioAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: "Visita a Domicilio" }
+        arguments:
+            - ~
+            - AppBundle\Entity\ServiciosVisitaDomicilio
+            - AppBundle:ServiciosFormAdmin
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+
+
+    sonata.admin.accidente_trabajo:
+        class: AppBundle\Admin\ServiciosAccidenteTrabajoAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: "Accidente de Trabajo" }
+        arguments:
+            - ~
+            - AppBundle\Entity\ServiciosAccidenteTrabajo
+            - AppBundle:ServiciosFormAdmin
         calls:
             - [ setTranslationDomain, [AppBundle]]

@@ -6,7 +6,7 @@ use Symfony\Component\Finder\Exception\AccessDeniedException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 
-class ServiciosExamenMedicoAdminController extends CRUDController
+class ServiciosFormAdminController extends CRUDController
 {
     public function showAction($id = null)
     {
@@ -22,7 +22,7 @@ class ServiciosExamenMedicoAdminController extends CRUDController
             throw new AccessDeniedException();
         }
 
-        $object->setWasRead(true);
+        $object->setIsRead(true);
         $object = $this->admin->update($object);
 
         $this->admin->setSubject($object);

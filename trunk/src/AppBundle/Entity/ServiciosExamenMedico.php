@@ -165,16 +165,26 @@ class ServiciosExamenMedico
     /**
      * @var boolean
      *
-     * @ORM\Column(name="wasRead", type="boolean")
+     * @ORM\Column(name="isRead", type="boolean")
      */
-    private $wasRead;
+    private $isRead;
 
     /**
      * @Gedmo\Timestampable(on="create")
      * @ORM\Column(name="created", type="datetime")
      */
     private $created;
-    
+
+    public function __construct()
+    {
+        $this->isRead = false;
+    }
+
+    public function __toString()
+    {
+        return (string) $this->getRazonSocial().' - '.$this->getApellidoNombreSolicitante();
+    }
+
     /**
      * Get id
      *
@@ -669,25 +679,25 @@ class ServiciosExamenMedico
     }
 
     /**
-     * Set wasRead
+     * Set isRead
      *
-     * @param boolean $wasRead
+     * @param boolean $isRead
      * @return ServiciosExamenMedico
      */
-    public function setWasRead($wasRead)
+    public function setIsRead($isRead)
     {
-        $this->wasRead = $wasRead;
+        $this->isRead = $isRead;
 
         return $this;
     }
 
     /**
-     * Get wasRead
+     * Get isRead
      *
      * @return boolean 
      */
-    public function getWasRead()
+    public function getIsRead()
     {
-        return $this->wasRead;
+        return $this->isRead;
     }
 }

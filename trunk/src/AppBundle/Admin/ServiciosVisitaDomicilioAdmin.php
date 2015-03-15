@@ -8,10 +8,10 @@ use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 use Sonata\AdminBundle\Route\RouteCollection;
 
-class ServiciosExamenMedicoAdmin extends Admin
+class ServiciosVisitaDomicilioAdmin extends Admin
 {
-    protected $baseRouteName    = 'admin_examen_medico';
-    protected $baseRoutePattern = 'examen-medico';
+    protected $baseRouteName    = 'admin_visita_domicilio';
+    protected $baseRoutePattern = 'visita-domicilio';
 
     protected function configureRoutes(RouteCollection $collection)
     {
@@ -39,7 +39,10 @@ class ServiciosExamenMedicoAdmin extends Admin
             ->add('email')
             ->add('fecha')
             ->add('apellidoNombre')
-            ->add('cargoTarea')
+            ->add('domicilio')
+            ->add('numero')
+            ->add('localidad')
+            ->add('provincia')
             ->add('isRead', null, array('label' => 'Leido'))
             ->add('created', null, array('label' => 'Enviado'))
             ->add('_action', 'actions', array(
@@ -59,21 +62,14 @@ class ServiciosExamenMedicoAdmin extends Admin
             ->add('email')
             ->add('fecha')
             ->add('apellidoNombre')
-            ->add('cargoTarea')
+            ->add('domicilio')
+            ->add('numero')
+            ->add('piso')
+            ->add('departamento')
+            ->add('entreCalles')
+            ->add('localidad')
+            ->add('provincia')
             ->add('observaciones')
-            ->add('ingreso')
-            ->add('periodico')
-            ->add('egreso')
-            ->add('ausenciaProlongada')
-            ->add('cambioDeTareas')
-            ->add('libretaSanitaria')
-            ->add('audiometria')
-            ->add('psicotecnico')
-            ->add('dapTest')
-            ->add('rxColumnaLumbarFrente')
-            ->add('rxColumnaFrentePerfil')
-            ->add('grupoFactorSanguineo')
-            ->add('otros')
             ->add('created')
         ;
     }

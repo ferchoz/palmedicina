@@ -10,6 +10,7 @@ class SlideCompanyAdmin extends Admin
 {
     protected $baseRouteName    = 'admin_slide_company';
     protected $baseRoutePattern = 'slide-company';
+
     // Fields to be shown on create/edit forms
     protected function configureFormFields(FormMapper $formMapper)
     {
@@ -28,6 +29,9 @@ class SlideCompanyAdmin extends Admin
     // Fields to be shown on lists
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('title');
+        $listMapper
+            ->addIdentifier('title')
+            ->add('image', 'string', array('template' => ':Admin:list_image.html.twig'))
+        ;
     }
 }
