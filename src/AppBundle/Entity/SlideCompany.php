@@ -33,6 +33,11 @@ class SlideCompany
      */
     private $image;
 
+    public function __toString()
+    {
+        return (string) $this->getTitle();
+    }
+
     /**
      * Get id
      *

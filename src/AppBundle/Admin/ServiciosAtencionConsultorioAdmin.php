@@ -8,10 +8,10 @@ use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 use Sonata\AdminBundle\Route\RouteCollection;
 
-class ServiciosExamenMedicoAdmin extends Admin
+class ServiciosAtencionConsultorioAdmin extends Admin
 {
-    protected $baseRouteName    = 'admin_examen_medico';
-    protected $baseRoutePattern = 'examen-medico';
+    protected $baseRouteName    = 'admin_atencion_cliente';
+    protected $baseRoutePattern = 'atencion-cliente';
 
     protected function configureRoutes(RouteCollection $collection)
     {
@@ -39,7 +39,6 @@ class ServiciosExamenMedicoAdmin extends Admin
             ->add('email')
             ->add('fecha')
             ->add('apellidoNombre')
-            ->add('cargoTarea')
             ->add('isRead', null, array('label' => 'Leido'))
             ->add('created', null, array('label' => 'Enviado'))
             ->add('_action', 'actions', array(
@@ -59,20 +58,15 @@ class ServiciosExamenMedicoAdmin extends Admin
             ->add('email')
             ->add('fecha')
             ->add('apellidoNombre')
-            ->add('cargoTarea')
             ->add('observaciones')
-            ->add('ingreso')
-            ->add('periodico')
-            ->add('egreso')
-            ->add('ausenciaProlongada')
-            ->add('cambioDeTareas')
-            ->add('libretaSanitaria')
-            ->add('audiometria')
-            ->add('psicotecnico')
-            ->add('dapTest')
-            ->add('rxColumnaLumbarFrente')
-            ->add('rxColumnaFrentePerfil')
-            ->add('grupoFactorSanguineo')
+            ->add('consultaClinica')
+            ->add('traumatologia')
+            ->add('cardiologia')
+            ->add('controlAusentismo')
+            ->add('dermatologia')
+            ->add('neurologia')
+            ->add('oftalmologia')
+            ->add('ginecologia')
             ->add('otros')
             ->add('created')
         ;

@@ -1,0 +1,92 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}{{ parent() }} - Accidente de Trabajo{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block container %}
+    <h2>Accidente de Trabajo</h2>
+    <p>
+        <em>Si usted es titular o encargado de la empresa, solicite la prestación a traves de este medio, completando los siguientes datos:</em>
+    </p>
+    <p>
+        <em>* campos requeridos</em>
+    </p>
+    <hr/>
+    {{ form_start(form, {'action': path('workAccident'), 'method':'POST', 'attr':{'class':'form-horizontal', 'role':'form', 'data-toggle':'validator'}}) }}
+        <p>Datos de la Empresa:</p>
+        {{ form_errors(form) }}
+        <div class="form-group">
+            <label for="accidentetrabajo_razonSocial" class="col-sm-3 control-label">*Razón Social:</label>
+            <div class="col-sm-9">
+                {{ form_widget(form.razonSocial, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="accidentetrabajo_apellidoNombreSolicitante" class="col-sm-3 control-label">*Apellido y Nombre del solicitante:</label>
+            <div class="col-sm-9">
+                {{ form_widget(form.apellidoNombreSolicitante, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="accidentetrabajo_email" class="col-sm-3 control-label">*E-mail:</label>
+            <div class="col-sm-9">
+                {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="accidentetrabajo_fecha" class="col-sm-3 control-label">*Fecha:</label>
+            <div class="col-sm-9">
+                <div class="input-group">
+                    <div class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></div>
+                    {{ form_widget(form.fecha, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="accidentetrabajo_art" class="col-sm-3 control-label">*ART:</label>
+            <div class="col-sm-9">
+                {{ form_widget(form.art, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+
+        <p>Datos del Empleado:</p>
+        <div class="form-group">
+            <label for="accidentetrabajo_apellidoNombre" class="col-sm-3 control-label">*Apellido y Nombre:</label>
+            <div class="col-sm-9">
+                {{ form_widget(form.apellidoNombre, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="accidentetrabajo_diagnosticoPresuntivo" class="col-sm-3 control-label">Diagnóstico Presuntivo:</label>
+            <div class="col-sm-9">
+                {{ form_widget(form.diagnosticoPresuntivo, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-9">
+                <button type="submit" class="btn btn-default">Enviar</button>
+                <button type="reset" class="btn btn-default">Limpiar</button>
+            </div>
+        </div>
+    {{ form_end(form) }}
+{% endblock container %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('js/moment.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/bootstrap-datetimepicker.min.js') }}"></script>
+    <script src="{{ asset('bootstrap-validator/validator.min.js') }}"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('#accidentetrabajo_fecha').datetimepicker({
+                format: "DD/MM/YYYY"
+            });
+        });
+    </script>
+{% endblock %}

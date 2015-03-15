@@ -1,0 +1,145 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}{{ parent() }} - Visita a Domicilio{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block container %}
+    <h2>Visita a Domicilio</h2>
+    <p>
+        <em>Si usted es titular o encargado de la empresa, solicite la prestación a traves de este medio, completando los siguientes datos:</em>
+    </p>
+    <p>
+        <em>* campos requeridos</em>
+    </p>
+    <hr/>
+    {{ form_start(form, {'action': path('visitingAddress'), 'method':'POST', 'attr':{'class':'form-horizontal', 'role':'form', 'data-toggle':'validator'}}) }}
+        <p>Datos de la Empresa:</p>
+        {{ form_errors(form) }}
+        <div class="form-group">
+            <label for="visitadomicilio_razonSocial" class="col-sm-3 control-label">*Razón Social:</label>
+            <div class="col-sm-9">
+                {{ form_widget(form.razonSocial, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="visitadomicilio_apellidoNombreSolicitante" class="col-sm-3 control-label">*Apellido y Nombre del solicitante:</label>
+            <div class="col-sm-9">
+                {{ form_widget(form.apellidoNombreSolicitante, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="visitadomicilio_email" class="col-sm-3 control-label">*E-mail:</label>
+            <div class="col-sm-9">
+                {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="visitadomicilio_fecha" class="col-sm-3 control-label">*Fecha:</label>
+            <div class="col-sm-9">
+                <div class="input-group">
+                    <div class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></div>
+                    {{ form_widget(form.fecha, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+        </div>
+
+        <p>Datos del Empleado:</p>
+        <div class="form-group">
+            <label for="visitadomicilio_apellidoNombre" class="col-sm-3 control-label">*Apellido y Nombre:</label>
+            <div class="col-sm-9">
+                {{ form_widget(form.apellidoNombre, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-7">
+                <div class="form-group">
+                    <label for="visitadomicilio_domicilio" class="col-sm-5 control-label">*Domicilio:</label>
+                    <div class="col-sm-7">
+                        {{ form_widget(form.domicilio, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="form-group">
+                    <label for="visitadomicilio_numero" class="col-sm-3 control-label">*Número:</label>
+                    <div class="col-sm-9">
+                        {{ form_widget(form.numero, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-7">
+                <div class="form-group">
+                    <label for="visitadomicilio_piso" class="col-sm-5 control-label">Piso:</label>
+                    <div class="col-sm-7">
+                        {{ form_widget(form.piso, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="form-group">
+                    <label for="visitadomicilio_departamento" class="col-sm-3 control-label">Departamento:</label>
+                    <div class="col-sm-9">
+                        {{ form_widget(form.departamento, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-7">
+                <div class="form-group">
+                    <label for="visitadomicilio_entreCalles" class="col-sm-5 control-label">Entre Calles:</label>
+                    <div class="col-sm-7">
+                        {{ form_widget(form.entreCalles, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="form-group">
+                    <label for="visitadomicilio_localidad" class="col-sm-3 control-label">*Localidad:</label>
+                    <div class="col-sm-9">
+                        {{ form_widget(form.localidad, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="visitadomicilio_provincia" class="col-sm-3 control-label">*Provincia:</label>
+            <div class="col-sm-9">
+                {{ form_widget(form.provincia, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="visitadomicilio_observaciones" class="col-sm-3 control-label">Observaciones:</label>
+            <div class="col-sm-9">
+                {{ form_widget(form.observaciones, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-9">
+                <button type="submit" class="btn btn-default">Enviar</button>
+                <button type="reset" class="btn btn-default">Limpiar</button>
+            </div>
+        </div>
+    {{ form_end(form) }}
+{% endblock container %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('js/moment.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/bootstrap-datetimepicker.min.js') }}"></script>
+    <script src="{{ asset('bootstrap-validator/validator.min.js') }}"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('#visitadomicilio_fecha').datetimepicker({
+                format: "DD/MM/YYYY"
+            });
+        });
+    </script>
+{% endblock %}

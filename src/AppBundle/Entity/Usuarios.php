@@ -121,6 +121,11 @@ class Usuarios implements UserInterface, \Serializable
         $this->isActive = true;
     }
 
+    public function __toString()
+    {
+        return (string) $this->getUsername();
+    }
+
     /**
      * Get id
      *
