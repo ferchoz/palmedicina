@@ -1,16 +1,20 @@
 /*Estilos para intranet de PAL Medicina Laboral - By Romi´ss*/
 
 .navbar {
-	min-height: 80px;
+	min-height: 70px;
+
 
 }
 
 .navbar-inverse{
-    background-position: center;
+	
+    
+    background-position: center; 
     background-color: white;
     border-color: darkblue;
 	background-image:url('../img/nav-fondo-01.jpg');
 	background-repeat: no-repeat;
+	
 }
 
 .navbar-inverse .navbar-nav>li>a{
@@ -18,7 +22,7 @@
 }
 
 .navbar-inverse .navbar-nav>li>a:hover{
-	color: darkblue;
+	color: darkblue ;
 }
 
 .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover{
@@ -30,11 +34,13 @@
 }
 
 .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header{
-	min-height: 80px;
+	min-height: 70px;
+	margin-bottom: -25px;
 }
 
 .navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover{
 	color: darkblue ;
+	background-color: #E8E8E8 ;
 }
 .navbar-inverse .navbar-toggle{
 	border-color: darkblue;
@@ -57,20 +63,19 @@ h3{
 
 footer{
 	text-align: center;
-	color: darkblue;
+	color: white;
+	background-color: gray;
 	margin:0;
 	padding-top: 30px;
 	padding-bottom: 10px;
-    background: rgb(173,217,228); /* Old browsers */
-/* IE9 SVG, needs conditional override of 'filter' to 'none' */
-background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2FkZDllNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwJSIgc3RvcC1jb2xvcj0iI2Q5ZWRmMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwJSIgc3RvcC1jb2xvcj0iI2Q5ZWRmMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjMzJSIgc3RvcC1jb2xvcj0iI2Y3ZmJmYyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQ2JSIgc3RvcC1jb2xvcj0iI2Q5ZWRmMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijg2JSIgc3RvcC1jb2xvcj0iI2FkZDllNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
-background: -moz-linear-gradient(top,  rgb(173,217,228) 0%, rgb(217,237,242) 10%, rgb(217,237,242) 10%, rgb(247,251,252) 33%, rgb(217,237,242) 46%, rgb(173,217,228) 86%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(173,217,228)), color-stop(10%,rgb(217,237,242)), color-stop(10%,rgb(217,237,242)), color-stop(33%,rgb(247,251,252)), color-stop(46%,rgb(217,237,242)), color-stop(86%,rgb(173,217,228))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgb(173,217,228) 0%,rgb(217,237,242) 10%,rgb(217,237,242) 10%,rgb(247,251,252) 33%,rgb(217,237,242) 46%,rgb(173,217,228) 86%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgb(173,217,228) 0%,rgb(217,237,242) 10%,rgb(217,237,242) 10%,rgb(247,251,252) 33%,rgb(217,237,242) 46%,rgb(173,217,228) 86%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  rgb(173,217,228) 0%,rgb(217,237,242) 10%,rgb(217,237,242) 10%,rgb(247,251,252) 33%,rgb(217,237,242) 46%,rgb(173,217,228) 86%); /* IE10+ */
-background: linear-gradient(to bottom,  rgb(173,217,228) 0%,rgb(217,237,242) 10%,rgb(217,237,242) 10%,rgb(247,251,252) 33%,rgb(217,237,242) 46%,rgb(173,217,228) 86%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#add9e4', endColorstr='#add9e4',GradientType=0 ); /* IE6-8 */
+background: rgba(109,176,194,1);
+background: -moz-linear-gradient(top, rgba(109,176,194,1) 0%, rgba(126,196,214,1) 14%, rgba(126,196,214,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(109,176,194,1)), color-stop(14%, rgba(126,196,214,1)), color-stop(100%, rgba(126,196,214,1)));
+background: -webkit-linear-gradient(top, rgba(109,176,194,1) 0%, rgba(126,196,214,1) 14%, rgba(126,196,214,1) 100%);
+background: -o-linear-gradient(top, rgba(109,176,194,1) 0%, rgba(126,196,214,1) 14%, rgba(126,196,214,1) 100%);
+background: -ms-linear-gradient(top, rgba(109,176,194,1) 0%, rgba(126,196,214,1) 14%, rgba(126,196,214,1) 100%);
+background: linear-gradient(to bottom, rgba(109,176,194,1) 0%, rgba(126,196,214,1) 14%, rgba(126,196,214,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6db0c2', endColorstr='#7ec4d6', GradientType=0 );
 }
 
 .panel-default>.panel-heading{
@@ -86,7 +91,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#add9e4', end
 }
 
 .navbar-nav>li>a{
-	padding-top: 37px;
+	padding-top: 20px;
 }
 
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
@@ -105,12 +110,22 @@ padding-top: 20px;
 #cierrosesion{
 	float: right;
 	margin-top: 10px;
+	  background-color: white;
+}
+
+#cierrosesion:hover{
+	background-color: gray;
+	color: white;
 }
 
 #infosesion p{
 	float: right;
 	margin-top: 20px;
 	margin-right: 15px;
+	font-size: 12px;
+}
+#infosesion .btn{
+	padding: 4px 7px;
 }
 
 #infosesion span{
@@ -119,13 +134,12 @@ padding-top: 20px;
 }
 
 #infosesion {
-float: right;
-padding-top: 44px;
+float: center;
 height: auto;
 }
 
 .carousel-inner{
-	max-height: 450px;
+	max-height:  :450px;	
 	margin-top: 10px;
 }
 
@@ -141,6 +155,10 @@ height: auto;
 	.collapse{
 		background-color: white;
 }
+.navbar-brand>img{
+    	height: 55px;
+        }
+
 }
 
 /* Custom, iPhone Retina */ 
@@ -151,19 +169,104 @@ height: auto;
 }
 
 @media (min-width: 768px) and (max-width: 993px) { 
+    
      .nav>li>a{
      	padding: 10px 8px;
      }
 }
 
 @media (min-width: 768px) and (max-width: 993px) { 
+    
         .navbar-right{
     	margin-top: 30px;
         }
+
+ }
+
+ @media (min-width: 768px) and (max-width: 993px) { 
+    
+        .navbar-brand>img{
+    	height: 65px;
+        }
+
+ }
+
+#pie{
+	width:100%;}
+
+/* Float Shadow */
+.dropdown {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.dropdown:before {
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+  content: '';
+  top: 100%;
+  left: 5%;
+  height: 10px;
+  width: 90%;
+  opacity: 0;
+  background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+  /* W3C */
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform, opacity;
+  transition-property: transform, opacity;
+}
+.dropdown:hover, .dropdown:focus, .dropdown:active {
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+  /* move the element up by 5px */
+}
+.dropdown:hover:before, .dropdownfocus:before, .dropdown:active:before {
+  opacity: 1;
+  -webkit-transform: translateY(5px);
+  transform: translateY(5px);
+  /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
 }
 
-@media (min-width: 768px) and (max-width: 993px) {
-    .navbar-brand>img{
-    height: 45px;
-    }
+.navbar-brand>img{
+	padding-bottom: 10px;
+  margin-top: -40px;
+}
+
+
+/* Fade */
+#infosesion .btn  {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: color, background-color;
+  transition-property: color, background-color;
+}
+#infosesion .btn:hover,#infosesion .btn:focus, #infosesion .btn:active {
+  background-color: #2098d1;
+  color: white;
+}
+
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover{
+	background-color: white;
 }
