@@ -35,7 +35,7 @@
 
 .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header{
 	min-height: 70px;
-	margin-bottom: -25px;
+	
 }
 
 .navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover{
@@ -241,7 +241,7 @@ height: auto;
 }
 
 .navbar-brand>img{
-	padding-bottom: 10px;
+	
   margin-top: -40px;
 }
 
