@@ -79,11 +79,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6db0c2', end
 }
 
 .panel-default>.panel-heading{
-	background-color: aliceblue;
+	background-color: #D3E8F4;
 }
 
 .well{
-	background-color: aliceblue;
+	background-color: #D3E8F4;
 }
 
 .navbar-brand{
