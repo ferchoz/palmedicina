@@ -9,9 +9,9 @@
 .navbar-inverse{
 	
     
-    background-position: center; 
-    background-color: white;
-    border-color: darkblue;
+  background-position: center; 
+  background-color: white;
+  border-color: darkblue;
 	background-image:url('../img/nav-fondo-01.jpg');
 	background-repeat: no-repeat;
 	
@@ -52,7 +52,7 @@
 a:visited{color:black !important;}
 
 h3{
-	color:darkblue;
+	color:#337ab7;
 }
 
 .firma{
@@ -269,4 +269,10 @@ height: auto;
 
 .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover{
 	background-color: white;
+}
+
+
+.italic{
+  font-style: oblique;
+  
 }
