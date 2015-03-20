@@ -100,7 +100,9 @@ background-color: transparent;
 }
 
 .page-header {
-padding-top: 20px;
+  /* padding-top: 20px; */
+  margin-top: 10px;
+  color: darkslateblue;
 }
 
 .navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover{

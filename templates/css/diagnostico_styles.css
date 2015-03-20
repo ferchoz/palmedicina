@@ -25,3 +25,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9577a8', end
 .navbar-inverse {
    background-image: url('../img/nav.png');
 }
+
+.panel-default>.panel-heading{
+	background-color: #EEEBF2;
+}
+
+.well{
+	background-color: #EEEBF2;
+}
