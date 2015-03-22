@@ -1,13 +1,13 @@
 {% extends 'layout.html.twig' %}
 
 {% block container %}
-    {#{% if bill.letra == 'A' %}#}
-        {#{% set img_bill = 'FCA.jpg' %}#}
-    {#{% elseif bill.letra == 'B' %}#}
+    {% if bill.letra == 'A' %}
+        {% set img_bill = 'FCA.jpg' %}
+    {% elseif bill.letra == 'B' %}
         {% set img_bill = 'FCB.jpg' %}
-    {#{% elseif bill.letra == 'X' %}#}
-        {#{% set img_bill = 'FCX.jpg' %}#}
-    {#{% endif %}#}
+    {% elseif bill.letra == 'X' %}
+        {% set img_bill = 'FCX.jpg' %}
+    {% endif %}
     <div class="row">
         <table align="center" width="724" height="1050" border="0" cellpadding="0" cellspacing="0" background="{{ asset(origin ~ '/img/' ~ img_bill) }}">
             <thead>
