@@ -1,0 +1,47 @@
+{% extends 'layout.html.twig' %}
+
+{% block container %}
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Centro de Diagnóstico Lanus</h1>
+        </div>
+    </div>
+
+    <!-- Image Header -->
+    <div class="row">
+        <div class="col-lg-12">
+            <img class="img-responsive" src="{{ asset('img/lanus.jpg') }}" alt="centro de diagnostico lanus">
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+            <div class="panel panel-primary text-center">
+                <div class="panel-heading"><h3 class="panel-title">Pal medicina laboral esta construyendo el primer Centro de Diagnóstico y tratamiento en Lanús Este, ubicado en la calle Basabilvaso 1859 y contará con:</h3></div>
+                <ul class="list-group">
+                    <li class="list-group-item">Laboratorio propios de análisis clínicos de alta complejidad</li>
+                    <li class="list-group-item">Estúdios por imágenes Resonancia Magnética, Tomografía, Ecografía y Mamografía</li>
+                    <li class="list-group-item">Cardiología con exámenes de Holter, Ecocardiograma y Electrocardiograma y Ergometría</li>
+                    <li class="list-group-item">Estúdios Fonoudiológicos</li>
+                    <li class="list-group-item">Neurología: Electroencefalograma y Electromiografía</li>
+                    <li class="list-group-item">Oftalmología clínica y quirúrgica</li>
+                    <li class="list-group-item">Traumatología clínica y quirúrgica, astroscopía y tratamiento del dolor</li>
+                    <li class="list-group-item">Rehabilitación con aparatología de punta</li>
+                    <li class="list-group-item">Endoscopía y estúdios funcionales digestivos</li>
+                    <li class="list-group-item">Neumología: Espirometría</li>
+                    <li class="list-group-item">Dermatología</li>
+                    <li class="list-group-item">Dos Quirófanos</li>
+                    <li class="list-group-item">Internación</li>
+                    <li class="list-group-item">Quince consultorios externos</li>
+                    <li class="list-group-item">Centro de Cosmetología y Estética</li>
+                    <li class="list-group-item">Centro de Recuperación Capilar</li>
+                    <li class="list-group-item">Bar buffet</li>
+                    <li class="list-group-item"><p class="italic">Para mayor información envía mail a <a href="mailto:informacion@diagnosticolanus.com.ar" target="top">informacion@diagnosticolanus.com.ar</a></p></li>
+                    <li class="list-group-item"><p class="italic">Seguinos en facebook: Ingresa a <a href="http://www.facebook.com/centrodediagnosticolanus" target="top">www.facebook.com/centrodediagnosticolanus</a> clikeá en "Me gusta" e inmediatamente estarás participando por importantes premios y descuentosinformacion@diagnosticolanus.com.ar</p></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <hr>
+    {% include 'socialMedia.html.twig' %}
+{% endblock container %}

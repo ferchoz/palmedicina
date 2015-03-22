@@ -1,6 +1,6 @@
-{% extends 'layout.html.twig' %}
+{% extends 'base.html.twig' %}
 
-{% block container %}
+{% block body %}
     <form class="form-horizontal" action="{{ path('login_check') }}" method="post">
         <div class="form-group">
             <label for="username" class="col-sm-2 control-label">Usuario:</label>
@@ -18,8 +18,8 @@
             <label for="origin" class="col-sm-2 control-label">origen:</label>
             <div class="col-sm-10">
                 <select class="form-control" id="origin" name="_origin">
-                    <option value="palmedicina">Palmedicina</option>
-                    <option value="diagnostico_lanus">Diagnóstico Lanús</option>
+                    <option value="pal">Palmedicina</option>
+                    <option value="diagnostico">Diagnóstico Lanús</option>
                 </select>
             </div>
         </div>
@@ -32,4 +32,4 @@
             <label class="has-error">{{ error.messageKey|trans(error.messageData) }}</label>
         {% endif %}
     </form>
-{% endblock container %}
+{% endblock body %}

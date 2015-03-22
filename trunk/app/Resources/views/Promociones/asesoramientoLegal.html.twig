@@ -1,0 +1,32 @@
+{% extends 'layout.html.twig' %}
+
+{% block container %}
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Asesoramiento Legal</h1>
+        </div>
+    </div>
+    <!-- Image Header -->
+    <div class="row">
+        <div class="col-lg-12">
+            <img class="img-responsive" src="{{ asset('img/asesoramiento.jpg') }}" alt="asesoramiento">
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+            <h2 class="text-center">Proximamente!!!!</h2>
+            <div class="panel panel-primary text-center">
+                <div class="panel-heading">
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <p class="italic">Para mayor información envíe un mail a <a href="mailto:marketing@palmedicinalaboral.com.ar" target="top">marketing@palmedicinalaboral.com.ar</a> o comuníquese con Damian Babor al 4247-7093 interno 8.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <hr>
+    {% include 'socialMedia.html.twig' %}
+{% endblock container %}

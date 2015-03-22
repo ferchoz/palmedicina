@@ -1,0 +1,80 @@
+{% extends 'layout.html.twig' %}
+
+{% block container %}
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Libreta Sanitaria</h1>
+        </div>
+    </div>
+
+    <!-- Image Header -->
+    <div class="row">
+        <div class="col-lg-12">
+            <img class="img-responsive" src="{{ asset('img/libreta.jpg') }}" alt="tramite libreta">
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">Se le vencen las libretas sanitaria al personal de su empresa?</h2>
+            <p>Recuerde que Pal Medicina Laboral está autorizado por las Municipalidades de Lanús, Avellaneda, Lomas de Zamora, Almirante Brown, Esteban Echeverria y los distintos hospitales de Capital Federal para gestionar y tramitar las libretas sanitarias de su personal. Nos ocupamos de realizar los estúdios, la tramitación y la entrega en su empresa a fin de optimizar los tiempos de producción laboral.</p>
+            <h3>Obtenga la libreta sanitaria en solo 3 pasos:</h3>
+        </div>
+        <div class="col-md-4 col-sm-4">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                        <span class="fa-stack fa-5x">
+                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                              <i class="fa fa fa-calendar-o fa-stack-1x fa-inverse"></i>
+                        </span>
+                </div>
+                <div class="panel-body">
+                    <p>Coordine con nosotros el día y horaria que más le covenga para realizar los estúdios en su empresa.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                        <span class="fa-stack fa-5x">
+                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                              <i class="fa fa-file-text-o fa-stack-1x fa-inverse"></i>
+                        </span>
+                </div>
+                <div class="panel-body">
+                    <p>Nuestro departamento de exámenes médicos la tramita ante el municipio correspondiente</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                        <span class="fa-stack fa-5x">
+                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                              <i class="fa fa fa-check fa-stack-1x fa-inverse"></i>
+                        </span>
+                </div>
+                <div class="panel-body">
+                    <p>Entregamos las libretas sanitarias.<br/><br/></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-sm-12">
+            <div class="panel panel-primary text-center">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Exámen: $190 + IVA</h3>
+                </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">Operativo en fábrica sin cargo adicional</li>
+
+                </ul>
+                <p class="italic">Ante cualquier inspección, dejamos constancia de libreta en tramite para evitar cualquier multa o apercibimiento.<br>
+                    Para mayor información envíe un mail a <a href="mailto:marketing@palmedicinalaboral.com.ar" target="top">marketing@palmedicinalaboral.com.ar</a> o comuníquese con Damian Babor al 4247-7093 interno 8.</p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    {% include 'socialMedia.html.twig' %}
+{% endblock container %}

@@ -1,0 +1,79 @@
+{% extends 'layout.html.twig' %}
+
+{% block container %}
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Servicio de Odontología</h1>
+        </div>
+    </div>
+
+    <!-- Image Header -->
+    <div class="row">
+        <div class="col-lg-12">
+            <img class="img-responsive" src="{{ asset('img/odonto.jpg') }}" alt="odontologia">
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Service Panels -->
+    <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+    <div class="row">
+        <hr>
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <p>Queremos recordarle que PAL Medicina Laboral SRL dispone de un excelente servicio odontológico para ústed, sus empleados y familiares. <br>Los aranceles son económicos y muy accesibles, a continuación se describen.</p>
+
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Servicios</th>
+                            <th>Empresa</th>
+                            <th>Familiares</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+
+                            <td>Extracción</td>
+                            <td>50$</td>
+                            <td>55$</td>
+                        </tr>
+                        <tr>
+
+                            <td>Restauración con amalgama</td>
+                            <td>50$</td>
+                            <td>55$</td>
+                        </tr>
+                        <tr>
+                            <td>Restauración con luz halogena</td>
+                            <td>65$</td>
+                            <td>70$</td>
+                        </tr>
+                        <tr>
+                            <td>Limpieza y topicación con fluor</td>
+                            <td>55$</td>
+                            <td>60$</td>
+                        </tr>
+                        <tr>
+                            <td>Tratamiento de conducto</td>
+                            <td>150$</td>
+                            <td>155$</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <hr>
+                    <h4 class="text-center">Consultas y urgencias sin cargo<br>Los turnos se pueden solicitar dentro o fuera del horario laboral, hasta los sábados inclusive</h4>
+                    <p class="text-center italic">Para mayor información envíe un mail a <a href="mailto:marketing@palmedicinalaboral.com.ar">marketing@palmedicinalaboral.com.ar</a> o comuníquese con Odontología al 4247-7093 interno 123</p>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <hr>
+    {% include 'socialMedia.html.twig' %}
+{% endblock container %}

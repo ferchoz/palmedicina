@@ -1,0 +1,37 @@
+{% extends 'layout.html.twig' %}
+
+{% block container %}
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Plan Nuevo Clientes</h1>
+        </div>
+    </div>
+
+    <!-- Image Header -->
+    <div class="row">
+        <div class="col-lg-12">
+            <img class="img-responsive" src="{{ asset('img/nuevos_clientes.jpg') }}" alt="homologacion">
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+            <div class="panel panel-default ">
+                <div class="panel-heading text-center">
+                    <h3>Recomiende nuestro plan de medicina laboral y reciba importantes beneficios</h3>
+                </div>
+                <div class="panel-body">
+                    <p>Reciba un mes de nuestro abono de medicina laboral bonificado recomendando nuestros servicios a otras empresas.<p>
+                    <h4>Bases de la promoción:</h4>
+                    <p>Para acceder al beneficio, deberá comunicarnos al 4247-7093 interno 8 o vía mail a marketing@palmedicinalaboral.com.ar, la razon social, nombre del responsable y telefono de la empresa recomendada y que no posea nuestro abono de medicina laboral. Ésta será contactada por Damian Babor con la finalidad de ofrecerles nuestro abono centralizado. Ústed recibirá un tope máximo de $500 que se imputará a la factura de su abono.<br></p>
+                    <ul>
+                        <li>(A) Se bonifica el mes correspondiente de la empresa nueva</li>
+                        <li>(B) En el caso de que el tope máximo supera al importe mensual del abono, se procederá a bonificar sobre este último</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    {% include 'socialMedia.html.twig' %}
+{% endblock container %}

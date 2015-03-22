@@ -1,0 +1,39 @@
+{% extends 'layout.html.twig' %}
+
+{% block container %}
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Seguridad e Higiene</h1>
+        </div>
+    </div>
+    <!-- Image Header -->
+    <div class="row">
+        <div class="col-lg-12">
+            <img class="img-responsive" src="{{ asset('img/seguridad.jpg') }}" alt="seguridad">
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Service Panels -->
+    <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+    <div class="row">
+        <hr>
+
+        <div class="col-md-12 col-sm-12">
+            <div class="panel panel-primary text-center">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Nuestro Departamento de Higiene y Seguridad Industrial cubre y asesora en todos los aspectos previstos por las Leyes 19587 y 11495 previniendo accidentes y enfermedades provocadas por el trabajo según lo indicado obligatoriamente en la Ley 24557 de "Riesgos del Trabajo".</h3>
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item">Seguimiento y ejecución de la documentación tecnico - legal</li>
+                    <li class="list-group-item">Realizamos cursos y capacitación al personal</li>
+                    <li class="list-group-item">Relevamientos permanentes de las condiciones de riego</li>
+                    <li class="list-group-item">Análsis de accidentes y enfermedades profesionales</li>
+                </ul>
+                <p class="italic">Consulte por abono a<a href="mailto:marketing@palmedicinalaboral.com.ar" target="top"> marketing@palmedicinalaboral.com.ar</a> o comuníquese con Damian Babor al 4247-7093 interno 8</p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    {% include 'socialMedia.html.twig' %}
+{% endblock container %}
