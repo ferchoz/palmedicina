@@ -55,7 +55,7 @@
             <p>Por favor chequear los datos de su empresa registrados en nuestra base de datos. Para solicitar una modificación enviar mail a Fernando a sistemas@palmedicinalaboral.com.ar</p>
         </div>
         <div class="col-md-6">
-            <img class="img-responsive" src="http://placehold.it/700x450" alt="">
+            <img class="img-responsive" src="{{ asset('img/plan_de_medicina_laboral.jpg') }}" alt="">
         </div>
     </div>
     <!-- /.row -->
@@ -111,27 +111,7 @@
             </div>
         </div>
     </div>
-    <div class="well">
-        <div class="row">
-            <div class="col-md-6">
-                <h2>Contacto</h2><p>Tel: 4247-7093 - Ituzaingo 1354, Lanus Este</p>
-            </div>
-            <div class="col-md-6"><h2>Seguinos en </h2>
-                <a class="btn btn-social-icon btn-twitter">
-                    <i class="fa fa-twitter"></i>
-                </a>
-                <a class="btn btn-social-icon btn-facebook">
-                    <i class="fa fa-facebook"></i>
-                </a>
-                <a class="btn btn-social-icon btn-linkedin">
-                    <i class="fa fa-linkedin"></i>
-                </a>
-                <a class="btn btn-social-icon btn-pinterest">
-                    <i class="fa fa-youtube"></i>
-                </a>
-            </div>
-        </div>
-    </div>
+    {% include 'socialMedia.html.twig' %}
 {% endblock container %}
 
 {% block javascripts %}

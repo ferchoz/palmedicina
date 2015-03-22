@@ -1,63 +1,69 @@
 {% extends 'layout.html.twig' %}
 
 {% block container %}
-    {% if bill.letra == 'A' %}
-        {% set img_bill = 'FCA.jpg' %}
-    {% elseif bill.letra == 'B' %}
+    {#{% if bill.letra == 'A' %}#}
+        {#{% set img_bill = 'FCA.jpg' %}#}
+    {#{% elseif bill.letra == 'B' %}#}
         {% set img_bill = 'FCB.jpg' %}
-    {% elseif bill.letra == 'X' %}
-        {% set img_bill = 'FCX.jpg' %}
-    {% endif %}
-    {% set origin = app.session.get('origin') %}
+    {#{% elseif bill.letra == 'X' %}#}
+        {#{% set img_bill = 'FCX.jpg' %}#}
+    {#{% endif %}#}
     <div class="row">
-        <table align="center" width="724" height="990" border="0" cellpadding="0" cellspacing="0" background="{{ asset('img/'~origin~'/'~img_bill) }}">
+        <table align="center" width="724" height="1050" border="0" cellpadding="0" cellspacing="0" background="{{ asset(origin ~ '/img/' ~ img_bill) }}">
             <thead>
             <tr>
-                <td height="31" colspan="6">&nbsp;</td>
+                <td height="16" colspan="6">&nbsp;</td>
+                <td colspan="2">&nbsp;</td>
+                <td class="vert-align">&nbsp;</td>
+            </tr>
+            <tr>
+                <td height="24" colspan="6">&nbsp;</td>
                 <td colspan="2">&nbsp;</td>
                 <td width="137" class="vert-align">{{ bill.numero }}</td>
             </tr>
             <tr>
-                <td height="26" colspan="6">&nbsp;</td>
-                <td colspan="2">{{ bill.fecha|date('d/m/Y') }}</td>
+                <td height="36" colspan="7">&nbsp;</td>
+                <td colspan="1">{{ bill.fecha|date('d/m/Y') }}</td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td height="88" colspan="6">&nbsp;</td>
+                <td height="109" colspan="6">&nbsp;</td>
                 <td colspan="2">&nbsp;</td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td width="74" height="94">&nbsp;</td>
+                <td width="74" height="87">&nbsp;</td>
                 <td colspan="3">
                     {{ bill.razon }}<br/>
                     {{ bill.domicilio }}<br/>
-                    {{ bill.localidad }}</td>
+                    {{ bill.localidad }}
+                </td>
                 <td colspan="5">
                     Cuenta: {{ bill.codigoe }}<br/>
-                    CUIT: {{ bill.nrocuit }}</td>
+                    CUIT: {{ bill.nrocuit }}
+                </td>
             </tr>
             <tr>
                 <td height="41">&nbsp;</td>
-                <td height="41" colspan="5">Contado</td>
+                <td colspan="5">Contado</td>
                 <td colspan="3">&nbsp;</td>
             </tr>
             <tr>
-                <td height="26" class="text-center">Cantidad</td>
-                <td height="26" colspan="5">Descripción</td>
+                <td height="37" class="text-center">Cantidad</td>
+                <td colspan="5">Descripción</td>
                 <td colspan="2">Precio</td>
                 <td>Total</td>
             </tr>
             </thead>
             <tbody>
-            {% for i in 0..20 %}
+            {% for i in 0..16 %}
             <tr>
                 <td height="26" class="text-center">
                     {% if rows[i] is defined %}
                         {{ rows[i].cantidad }}
                     {% endif %}
                 </td>
-                <td height="26" colspan="5">
+                <td colspan="5">
                     {% if rows[i] is defined %}
                         {{ rows[i].descripcion }}
                     {% endif %}
@@ -77,33 +83,42 @@
             </tbody>
             <tfoot>
             <tr>
-                <td height="87">&nbsp;</td>
-                <td colspan="5">&nbsp;</td>
-            {% if bill.letra != 'X' %}
-                <td colspan="2">Percepcion: {{ bill.porceper }}</td>
-                <td>{{ bill.impoper }}</td>
-            {% else %}
-                <td colspan="3"></td>
-            {% endif %}
+                <td height="42" class="text-center"></td>
+                <td colspan="5"></td>
+                <td colspan="2"></td>
+                <td></td>
             </tr>
             <tr>
-                <td height="19">&nbsp;</td>
-                <td width="71">&nbsp;</td>
-                <td width="144">&nbsp;</td>
-                <td width="73">&nbsp;</td>
-                <td width="71">&nbsp;</td>
+                <td height="65">&nbsp;</td>
+                <td colspan="5">&nbsp;</td>
+                {% if bill.letra != 'X' %}
+                    <td colspan="2">Percepcion: {{ bill.porceper }}</td>
+                    <td>{{ bill.impoper }}</td>
+                {% else %}
+                    <td colspan="3"></td>
+                {% endif %}
+            </tr>
+            <tr>
+                <td height="23">&nbsp;</td>
+                <td width="61">&nbsp;</td>
+                <td width="130">&nbsp;</td>
+                <td width="99">&nbsp;</td>
+                <td width="11">&nbsp;</td>
                 <td width="21">&nbsp;</td>
                 <td width="123">&nbsp;</td>
-                <td width="10">&nbsp;</td>
+                <td width="70">&nbsp;</td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td height="31" colspan="2" class="text-center">{{ bill.gravado|number_format(2, ',', '.') }}</td>
+                <td height="37" colspan="2" class="text-center">{{ bill.gravado|number_format(2, ',', '.') }}</td>
                 {% set noGravado = (bill.nogravado < 1) ? 0 : bill.nogravado %}
-                <td width="144" class="text-center">{{ noGravado|number_format(2, ',', '.') }}</td>
+                <td class="text-center">{{ noGravado|number_format(2, ',', '.') }}</td>
                 <td colspan="2" class="text-center">{{ bill.subtotal|number_format(2, ',', '.') }}</td>
                 <td colspan="2" class="text-center">{{ bill.iva1|number_format(2, ',', '.') }}</td>
                 <td colspan="2" class="text-center">{{ bill.total|number_format(2, ',', '.') }}</td>
+            </tr>
+            <tr>
+                <td height="53" colspan="9">&nbsp;</td>
             </tr>
             </tfoot>
         </table>

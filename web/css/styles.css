@@ -1,0 +1,255 @@
+#cierrosesion{
+    float: right;
+    margin-top: 10px;
+    background-color: white;
+}
+
+/* Float Shadow */
+.dropdown {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+
+.dropdown:before {
+    pointer-events: none;
+    position: absolute;
+    z-index: -1;
+    content: '';
+    top: 100%;
+    left: 5%;
+    height: 10px;
+    width: 90%;
+    opacity: 0;
+    background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+    /* W3C */
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform, opacity;
+    transition-property: transform, opacity;
+}
+
+.dropdown:hover, .dropdown:focus, .dropdown:active {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+    /* move the element up by 5px */
+}
+
+.dropdown:hover:before, .dropdownfocus:before, .dropdown:active:before {
+    opacity: 1;
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+    /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+}
+
+/* Fade */
+#infosesion .btn  {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: color, background-color;
+    transition-property: color, background-color;
+}
+
+.navbar {
+    min-height: 70px;
+}
+
+.navbar-inverse{
+    background-position: center;
+    background-color: white;
+    border-color: darkblue;
+    background-repeat: no-repeat;
+}
+
+.navbar-inverse .navbar-nav>li>a{
+    color: black;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover{
+    color: darkblue ;
+}
+
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover{
+    background-color: transparent;
+}
+
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover{
+    color:black;
+}
+
+.container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header{
+    min-height: 70px;
+}
+
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover{
+    color: darkblue ;
+    background-color: #E8E8E8 ;
+}
+.navbar-inverse .navbar-toggle{
+    border-color: darkblue;
+}
+.navbar-inverse .navbar-toggle .icon-bar{
+    background-color: darkblue;
+}
+
+a:visited{color:black !important;}
+
+h3{
+    color:#337ab7;
+}
+
+.firma{
+    font-style: oblique;
+    text-align: right;
+}
+
+footer{
+    text-align: center;
+    color: white;
+    background-color: gray;
+    margin:0;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+
+.navbar-brand{
+    float:none;
+}
+
+.navbar-nav>li>a{
+    padding-top: 20px;
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+    color: black;
+    background-color: transparent;
+}
+
+.page-header {
+    margin-top: 10px;
+    color: darkslateblue;
+}
+
+#cierrosesion:hover{
+    background-color: gray;
+    color: white;
+}
+
+#infosesion p{
+    float: right;
+    margin-top: 20px;
+    margin-right: 15px;
+    font-size: 12px;
+}
+#infosesion .btn{
+    padding: 4px 7px;
+}
+
+#infosesion span{
+    color:darkblue;
+}
+
+#infosesion {
+    float: none;
+    height: auto;
+}
+
+.carousel-inner{
+    max-height:  450px;
+    margin-top: 10px;
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+    .collapse{
+        background-color: white;
+    }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+    .collapse{
+        background-color: white;
+    }
+    .navbar-brand>img{
+        height: 55px;
+    }
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+    .collapse{
+        background-color: white;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 993px) {
+    .nav>li>a{
+        padding: 10px 8px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 993px) {
+    .navbar-right{
+        margin-top: 30px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 993px) {
+    .navbar-brand>img{
+        height: 65px;
+    }
+}
+
+#pie{
+    width:100%;
+}
+
+.navbar-brand>img{
+    margin-top: -40px;
+}
+
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover{
+    background-color: white;
+}
+
+.italic{
+    font-style: oblique;
+}
+
+.modulo{
+    border-style:inset;
+    padding-top: 10px;
+}
+
+.datos{
+    border-width: thin;
+    border-bottom: solid 1px lightgray;
+}
+
+.anotaciones{
+    padding: 5px;
+    background-color: #EBEBEB;
+    border-radius: 5px;
+}

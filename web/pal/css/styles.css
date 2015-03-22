@@ -1,0 +1,32 @@
+/*Estilos para intranet de Diagnostico Lanús - By Romi´ss*/
+footer{
+    background: rgba(109,176,194,1);
+    background: -moz-linear-gradient(top, rgba(109,176,194,1) 0%, rgba(126,196,214,1) 14%, rgba(126,196,214,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(109,176,194,1)), color-stop(14%, rgba(126,196,214,1)), color-stop(100%, rgba(126,196,214,1)));
+    background: -webkit-linear-gradient(top, rgba(109,176,194,1) 0%, rgba(126,196,214,1) 14%, rgba(126,196,214,1) 100%);
+    background: -o-linear-gradient(top, rgba(109,176,194,1) 0%, rgba(126,196,214,1) 14%, rgba(126,196,214,1) 100%);
+    background: -ms-linear-gradient(top, rgba(109,176,194,1) 0%, rgba(126,196,214,1) 14%, rgba(126,196,214,1) 100%);
+    background: linear-gradient(to bottom, rgba(109,176,194,1) 0%, rgba(126,196,214,1) 14%, rgba(126,196,214,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6db0c2', endColorstr='#7ec4d6', GradientType=0 );
+}
+
+.navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover{
+    color:	darkblue;
+}
+
+#infosesion .btn:hover,#infosesion .btn:focus, #infosesion .btn:active {
+    background-color: #2098d1;
+    color: white;
+}
+
+.navbar-inverse {
+    background-image: url('../img/nav.png');
+}
+
+.panel-default>.panel-heading{
+    background-color: #D3E8F4;
+}
+
+.well{
+    background-color: #D3E8F4;
+}

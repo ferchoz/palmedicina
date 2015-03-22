@@ -1,0 +1,44 @@
+{% extends 'layout.html.twig' %}
+
+{% block container %}
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Cursos</h1>
+        </div>
+    </div>
+
+    <!-- Image Header -->
+    <div class="row">
+        <div class="col-lg-12">
+            <img class="img-responsive" src="{{ asset('img/cursos.jpg') }}" alt="seguridad">
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Service Panels -->
+    <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+    <div class="row">
+        <hr>
+
+        <div class="col-md-12 col-sm-12">
+            <div class="panel panel-primary text-center">
+                <h3>Primeros Auxílios y Enfermedades infecto contagiosas</h3>
+
+                <p>PAL MEDICINA LABORAL les comuníca que el Dr. Norberto Babor, médico director, realiza cursos de
+                    "Primeros Auxílios y Resucitación Cardiovascular" y de "Enfermedades infecto contagiosas" al
+                    personal de su empresa con material incluído y en el lugar de trabajo.</p>
+                <ul class="list-group">
+                    <li class="list-group-item">Curso: $800 + IVA</li>
+                    <li class="list-group-item">Hasta veinte personas con material incluído</li>
+                    <li class="list-group-item"><p class="italic">Para mayor información envíe un mail a <a
+                                    href="mailto:marketing@palmedicinalaboral.com.ar" target="top">marketing@palmedicinalaboral.com.ar</a>
+                            o comuníquese con Damian Babor al 4247-7093 interno 8. </p></li>
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+    <hr>
+    {% include 'socialMedia.html.twig' %}
+{% endblock container %}
