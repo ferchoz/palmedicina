@@ -46,7 +46,11 @@
 
     <!-- Footer -->
     <hr>
-    {% include 'footer.html.twig' %}
+    {% if (origin == 'pal') %}
+        {% include 'pal/footer.html.twig' %}
+    {% else %}
+        {% include 'diagnostico/footer.html.twig' %}
+    {%  endif %}
 {% endblock %}
 
 {% block javascripts %}
