@@ -9,9 +9,9 @@ security:
         fos_userbundle:
             id: fos_user.user_manager
         pal_users:
-            entity: { class: AppBundle:Usuarios, property: usuario }
+            entity: { class: OldBundle:iUSUARIOS, property: usuario, manager_name: old }
     encoders:
-        AppBundle\Entity\Usuarios: plaintext
+        OldBundle\Entity\iUSUARIOS: plaintext
         FOS\UserBundle\Model\UserInterface: sha512
 
     firewalls:
