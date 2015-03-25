@@ -1,18 +1,18 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace OldBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\Role\Role;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
- * Usuarios
+ * iUSUARIOS
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="AppBundle\Entity\UsuariosRepository")
+ * @ORM\Entity()
  */
-class Usuarios implements UserInterface, \Serializable
+class iUSUARIOS implements UserInterface, \Serializable
 {
     /**
      * @var integer
@@ -40,16 +40,16 @@ class Usuarios implements UserInterface, \Serializable
     /**
      * @var string
      *
-     * @ORM\Column(name="Clave", type="string", length=10)
+     * @ORM\Column(name="Usuario", type="string", length=20)
      */
-    private $clave;
+    private $usuario;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="Usuario", type="string", length=20)
+     * @ORM\Column(name="Clave", type="string", length=10)
      */
-    private $usuario;
+    private $clave;
 
     /**
      * @var string
@@ -140,7 +140,7 @@ class Usuarios implements UserInterface, \Serializable
      * Set codigopal
      *
      * @param string $codigopal
-     * @return Usuarios
+     * @return iUSUARIOS
      */
     public function setCodigopal($codigopal)
     {
@@ -163,7 +163,7 @@ class Usuarios implements UserInterface, \Serializable
      * Set nombrepal
      *
      * @param string $nombrepal
-     * @return Usuarios
+     * @return iUSUARIOS
      */
     public function setNombrepal($nombrepal)
     {
@@ -186,7 +186,7 @@ class Usuarios implements UserInterface, \Serializable
      * Set clave
      *
      * @param string $clave
-     * @return Usuarios
+     * @return iUSUARIOS
      */
     public function setClave($clave)
     {
@@ -209,7 +209,7 @@ class Usuarios implements UserInterface, \Serializable
      * Set usuario
      *
      * @param string $usuario
-     * @return Usuarios
+     * @return iUSUARIOS
      */
     public function setUsuario($usuario)
     {
@@ -232,7 +232,7 @@ class Usuarios implements UserInterface, \Serializable
      * Set activo
      *
      * @param string $activo
-     * @return Usuarios
+     * @return iUSUARIOS
      */
     public function setActivo($activo)
     {
@@ -255,7 +255,7 @@ class Usuarios implements UserInterface, \Serializable
      * Set correo
      *
      * @param string $correo
-     * @return Usuarios
+     * @return iUSUARIOS
      */
     public function setCorreo($correo)
     {
@@ -378,7 +378,7 @@ class Usuarios implements UserInterface, \Serializable
      * Set domicilio
      *
      * @param string $domicilio
-     * @return Usuarios
+     * @return iUSUARIOS
      */
     public function setDomicilio($domicilio)
     {
@@ -401,7 +401,7 @@ class Usuarios implements UserInterface, \Serializable
      * Set localidad
      *
      * @param string $localidad
-     * @return Usuarios
+     * @return iUSUARIOS
      */
     public function setLocalidad($localidad)
     {
@@ -424,7 +424,7 @@ class Usuarios implements UserInterface, \Serializable
      * Set telefono
      *
      * @param string $telefono
-     * @return Usuarios
+     * @return iUSUARIOS
      */
     public function setTelefono($telefono)
     {
@@ -447,7 +447,7 @@ class Usuarios implements UserInterface, \Serializable
      * Set contacto
      *
      * @param string $contacto
-     * @return Usuarios
+     * @return iUSUARIOS
      */
     public function setContacto($contacto)
     {
@@ -470,7 +470,7 @@ class Usuarios implements UserInterface, \Serializable
      * Set actividad
      *
      * @param string $actividad
-     * @return Usuarios
+     * @return iUSUARIOS
      */
     public function setActividad($actividad)
     {
@@ -493,7 +493,7 @@ class Usuarios implements UserInterface, \Serializable
      * Set correop
      *
      * @param string $correop
-     * @return Usuarios
+     * @return iUSUARIOS
      */
     public function setCorreop($correop)
     {
@@ -516,7 +516,7 @@ class Usuarios implements UserInterface, \Serializable
      * Set nombreart
      *
      * @param string $nombreart
-     * @return Usuarios
+     * @return iUSUARIOS
      */
     public function setNombreart($nombreart)
     {
